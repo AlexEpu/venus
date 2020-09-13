@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  
+  
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  background:#232727;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home,
+.movies,
+.mymovies,
+.myaccount,
+.join-us {
   display: flex;
-  flex-direction: column;
+  min-height: 120vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* font-size: 3rem; */
 }
 
-.App-link {
-  color: #61dafb;
+.home {
+  /* background: linear-gradient(90deg, rgb(39, 39, 39) 0%, rgb(36, 33, 33) 100%); */
+  /* background:#222727; */
+  /* background:#03fafa; */
+  /* background: #1abc9c; */
+  /* background-image: url('./images/img-1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+  color: #fff;
+  font-size: 100px;
+  
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movies {
+  background-image: url('./images/img-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
+
+.mymovies {
+  background-image: url('./images/img-3.jpg');
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.myaccount {
+  background-image: url('./images/img-4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.join-us {
+  background-image: url('./images/img-7.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+

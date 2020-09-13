@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import "./App.css";
+import Home from "./components/Pages/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Movies from "./components/Pages/Movies";
+import MyMovies from "./components/Pages/MyMovies";
+import MyAccount from "./components/Pages/MyAccount";
+import JoinUs from "./components/Pages/JoinUs";
+import Footer from "./components/footer";
+import Scroll from "./components/ScrollToTop";
+//import WelcomeBanner from "./components/WelcomeBanner";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/movies" component={Movies} />
+        <Route path="/mymovies" component={MyMovies} />
+        <Route path="/myaccount" component={MyAccount} />
+        <Route path="/join-us" component={JoinUs} />
+      </Switch>
+      <Footer />
+      <Scroll showBelow={50} />
+    </Router>
   );
 }
 

@@ -1,0 +1,114 @@
+.footer {
+    
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%); */
+    background: #1f2323;
+    /* background: #2c3e50; */
+    ;
+    /* position: fixed; */
+    /* margin-top: -50px; */
+     
+    
+    
+    
+}
+
+.socials {
+    display: flex;
+    height: 50px;
+    background-color: black;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8em;
+    color: #fff;
+    margin-top: 0px;
+
+}
+
+.logo img {
+    /* z-index: 20; */
+    /* position: absolute; */
+    height: 70px;
+    transition: all 0.5s ease-in-out;
+    /* left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px; */
+    padding-bottom: 5px;
+}
+
+/* .logo img:hover {
+   height: 115px;
+} */
+
+/* .logo img {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.logo img:hover,
+.logo img:focus,
+.logo img:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+} */
+
+/* Buzz */
+@-webkit-keyframes hvr-buzz {
+    50% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+
+    100% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+}
+
+@keyframes hvr-buzz {
+    50% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+
+    100% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+}
+
+.logo img {
+    display: inline-block;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.logo img:hover,
+.logo img:focus,
+.logo img:active {
+    -webkit-animation-name: hvr-buzz;
+    animation-name: hvr-buzz;
+    -webkit-animation-duration: 0.10s;
+    animation-duration: 0.10s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+

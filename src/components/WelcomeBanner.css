@@ -1,0 +1,70 @@
+.banner-main {
+    position: absolute;
+    height: 300px;
+    /* background-color: rgba(0, 0, 0, 0.109); */
+    /* background-color: #0024f369; */
+   background-image: url(../images/backimg1.png);
+   
+    opacity: 0.5;
+    width:60%;
+     left: 50%;
+     margin-left: -30%;
+     /* border: 1px solid rgba(255, 255, 255, 0.089); */
+     border: none;
+     border-bottom-left-radius:10px;
+     border-bottom-right-radius: 10px;
+     transition: all 0.5s ease-in;
+     
+}  
+     
+
+.banner-main:before {
+    content:'';
+    z-index: 2222;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-image: url(../images/backimg1.png);
+
+    opacity: 1;
+   
+}
+
+.banner-main:hover {
+    height: 285px;
+    width:55%;
+    left:50%;
+    margin-left: -27.5%;
+}
+
+.banner-main:before {}
+
+.banner-container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-h1 {
+    opacity: 1 !important;
+    font-family: 'Montserrat',
+    sans-serif;
+    margin-left: 60px;
+    margin-top: 60px;
+    color: #ffffff;
+}
+
+.banner-paragraph {
+    opacity: 1;
+    font-family: 'Montserrat',
+    sans-serif;
+    margin-left: 60px;
+    margin-top: 10px;
+    color: #fff;
+    font-family: 'Roboto',
+    sans-serif;
+}
