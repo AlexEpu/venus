@@ -7,53 +7,80 @@ margin: 150px 0px 150px 0px;
 
 .join-us-main-container {
     border-radius: 10px;
-    flex-direction: column;
-    min-height: 270px;
+    /* flex-direction: column; */
+    min-height: 350px;
     /* border: 5px solid black; */
     background-image: url(../images/backimg3.jpg);
     width: 80%;
     background-repeat:no-repeat;
     background-size: cover;
     display: flex;
+    align-items: center;
+    
+    
+   
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.text-container h1 {
+    margin: 0;
+     white-space: pre-wrap;
+     color: #fff;
+     padding: 0;
+     
 }
 
 .join-us-main-container-text {
       white-space: pre-wrap;
       color: #fff;
-      font-size: 4.5em;
-      padding: 15px;
+      font-size:5em;
+      padding: 10px;
 }
 .join-us-main-container-text1 {
     white-space: pre-wrap;
     color: #fff;
-    font-size: 3.5em;
+    font-size: 4.1em;
     padding: 15px;
 }
 .join-us-main-container-text2{
     white-space: pre-wrap;
     color: #fff;
-    font-size: 3.8em;
+    font-size: 3.5em;
     padding: 15px;
 }
 .join-us-main-container-text3 {
     white-space: pre-wrap;
     color: #fff;
-    font-size: 5em;
+    font-size: 5.5em;
     padding: 15px;
-    flex-wrap: wrap;
+}
+
+
+.button-container {
+ justify-self: center;
+ margin-right: auto;
+ margin-left: auto;
+    
+    
+    
 }
 
 @media screen and (max-width: 980px) {
     .join-us-main-container {
         flex-direction: column;
         min-height: 270px;
-        /* border: 5px solid black; */
         background-image: url(../images/backimg3.jpg);
         width: 80%;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
-        text-align: center;
+        /* text-align: center; */
+        flex-wrap: wrap;
     }
 
         .join-us-main-container-text3 {
@@ -62,6 +89,16 @@ margin: 150px 0px 150px 0px;
             font-size:3em;
             padding: 15px;
             flex-wrap: wrap;
-        align-self: center;
+        /* align-self: center; */
+        
         }
+.button-container {
+    justify-self: center;
+    margin-right: auto;
+    margin-left: auto;
+
+
+
+}
+
     }
