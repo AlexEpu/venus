@@ -1,10 +1,12 @@
 import React from "react";
-import "../../App.css";
+import LoginApp from "./login/LoginApp"
+import './login/LoginApp.css';
+import './login/style.css';
 
 export default function JoinUs() {
   return (
     <>
-      <h1 className="join-us">JOIN-US</h1>
+      <LoginApp/>
     </>
   );
 }
