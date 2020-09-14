@@ -1,0 +1,40 @@
+
+/* ARROW */
+.MuiIconButton-root {
+    flex: 0 0 auto;
+    color: #1b1b1b !important;
+    padding: 10px !important;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+}
+
+/* CIRCLE */
+.makeStyles-toTop-1 {
+    color: black;
+    bottom: 2vh;
+    z-index: 2;
+    position: fixed;
+    background-color: #f52a3f !important;
+}
+
+.makeStyles-toTop-1:hover {
+    color: black;
+    bottom: 2vh;
+    z-index: 2;
+    position: fixed;
+    background-color: #d33444 !important;
+}
+
+.MuiIconButton-root:hover {
+    flex: 0 0 auto;
+    color: #54ab93 !important;
+    padding: 10px !important;
+    overflow: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+}
