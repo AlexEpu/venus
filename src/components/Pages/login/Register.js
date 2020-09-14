@@ -142,7 +142,7 @@ export class Register extends React.Component {
               </div>
             </div>
           </div>
-          <div className="footer">
+          <div className="register-footer">
           <div className="valid">
             
               </div> 

@@ -127,7 +127,7 @@ export class Login extends React.Component {
             </div>
           </div>
         </div>
-        <div className="footer">
+        <div className="login-footer">
         <div className="valid">
             
               </div> 

@@ -2,7 +2,7 @@
 
 .base-container{
 width: 100%;
-margin-top: 100px;
+
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -13,7 +13,9 @@ justify-content: center;
     display: flex;
     padding:2px;
     font-size: 20px;
-    font-family: "Open Sans", sans-serif;}
+    font-family: 'Montserrat',
+    sans-serif;
+    }
 
 .content{
 display:flex;
@@ -45,7 +47,8 @@ min-width:300px;
 height:37px;
 padding:0px 10px;
 font-size:16px;
-font-family:"Open Sans", sans-serif;
+font-family: 'Montserrat',
+sans-serif;
 background-color: lightgray;
 border:0;
 border-radius: 4px;
@@ -58,7 +61,7 @@ transition: all 250ms ease-in-out;
 .form-group input:focus{outline:none;
 box-shadow:0px 0px 12px 0.8px rgb(61, 61, 197)}
 
-.footer{
+.login-footer, .register-footer{
     margin-top:4px;
 }
 
