@@ -19,7 +19,7 @@ html {
 .myaccount,
 .join-us {
   display: flex;
-  min-height:100vh;
+  min-height:110vh;
   align-items: center;
   justify-content: center;
   /* font-size: 3rem; */
