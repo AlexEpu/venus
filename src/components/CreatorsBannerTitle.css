@@ -1,5 +1,5 @@
 .creators-banner-main {
-    padding: 15px;
+    padding: 25px;
     /* background:#F73A4C; */
     background-image: url(../images/backimg2.jpg);
 /* border: 10px solid black; */
@@ -10,6 +10,7 @@ flex-direction: column;
 margin-top: -330px;
 background-size: cover;
 /* height: 150px; */
+background-position: right 10px bottom 300px;
 }
 
 .banner-text {
