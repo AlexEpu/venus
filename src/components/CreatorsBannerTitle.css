@@ -1,12 +1,14 @@
 .creators-banner-main {
-    padding: 5px;
-    background:#F73A4C;
+    padding: 15px;
+    /* background:#F73A4C; */
+    background-image: url(../images/backimg2.jpg);
 /* border: 10px solid black; */
 display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-/*margin-top:auto;*/
+margin-top: -330px;
+background-size: cover;
 /* height: 150px; */
 }
 
