@@ -14,7 +14,7 @@ export default function Home() {
       <h1 className="home"></h1>
       <CreatorsBannerTitle />
       <CreatorsBanner />
-      <JoinUsBannerHome/>
+      <JoinUsBannerHome />
     </>
   );
 }

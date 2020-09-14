@@ -8,9 +8,10 @@
   
 }
 
-html {
+#root {
   background:#232727;
-  
+
+
 }
 
 .home,
@@ -19,9 +20,9 @@ html {
 .myaccount,
 .join-us {
   display: flex;
-  min-height:110vh;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   /* font-size: 3rem; */
 }
 
@@ -34,9 +35,6 @@ html {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; */
-  color: #fff;
-  font-size: 100px;
-  
   
 }
 
