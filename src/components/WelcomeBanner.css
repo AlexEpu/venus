@@ -1,6 +1,6 @@
 .banner-main {
     position: absolute;
-    height: 300px;
+    height:200px;
     /* background-color: rgba(0, 0, 0, 0.109); */
     /* background-color: #0024f369; */
    background-image: url(../images/backimg1.png);
@@ -35,7 +35,7 @@
 }
 
 .banner-main:hover {
-    height: 285px;
+    height: 220px;
     width:55%;
     left:50%;
     margin-left: -27.5%;
