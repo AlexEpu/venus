@@ -89,15 +89,15 @@ width: 80%;
 
 .picture-container h1
  {
-    color: #1888ff;
+    color:#54ab93;
 }
 
 .socials-home a{
-color: #1888ff;
+color:#54ab93;
 transition: all 0.3s ease;
 }
 .socials-home a:hover {
-    color: #1068c5;
+    color: #448a76;
 }
 /* .picture-container img:hover{
 opacity: 0.5;
@@ -118,7 +118,8 @@ opacity: 0.5;
 font-family: 'Montserrat',
 sans-serif;
 font-weight: 800;
-color: #00fd00;
+color: #00ff15c2;
+
 }
 
 .short-desc {
@@ -139,7 +140,7 @@ color: #00fd00;
 .picture-left-container:hover .picture-left,
 .picture-middle-container:hover .picture-middle,
 .picture-right-container:hover .picture-right {
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .picture-left-container:hover .short-desc,
