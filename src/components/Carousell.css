@@ -18,28 +18,7 @@
 }
 
 
-.rec-item-wrapper, .rec-item-wrapper{
-  position: relative;
-}
 
-
-.rec-carousel,
-.rec-item-wrapper:hover::before {
-  -webkit-animation: shine .75s;
-  animation: shine .75s;
-}
-
-@-webkit-keyframes shine {
-  100% {
-    left: 125%;
-  }
-}
-
-@keyframes shine {
-  100% {
-    left: 125%;
-  }
-}
 
 .rec-item-wrapper,
 .rec-item-wrapper:hover .image {
@@ -77,10 +56,11 @@
 .rec-carousel-wrapper {
   background-image: url(../images/backimg1.png);
  
-/* position: absolute; */
+position: absolute;
   margin-top:250px;
   background-repeat: no-repeat;
   background-size: cover;
+
  
 }
 
