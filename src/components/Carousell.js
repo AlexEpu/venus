@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
 import "./Carousell.css";
+import CarouselLoader from './CarouselLoader';
 
 const breakPoints = [
   { width: 500, itemsToShow: 3, autoplay: true },
@@ -21,37 +22,55 @@ export default class Carousell extends React.Component {
   componentDidMount() {
     // #1. First of all you have to fetch the images.
     fetch("https://ancient-caverns-16784.herokuapp.com/movies?take=100&skip=0")
-      .then((response) => response.json())
-      // If it's a JSON response, you have to parse it firstly
-      .then((images) => this.setState({ images: images.results })); // #2. After that you have to keep the images in the component's state.
+      .then((response) => {
+        if (!response.ok) {
+          throw response;
+        }
+        return response.json(); //we only get here if there is no error
+      })
+      .then((images) => {
+        this.setState({ images: images.results });
+      })
+      .catch((err) => {
+        this.displayError();
+      });
+  }
+
+  displayError() {
+    return (
+      <div>
+        <h3>Oupsie..we couldn't get the images.</h3>
+      </div>
+    );
   }
 
   render() {
     const { images } = this.state;
     console.log(images);
-    if (!images) return <div></div>;
+    if (!images)
+      return (
+        <div className="loader">
+          <CarouselLoader />
+        </div>
+      );
 
     // #3. Finally, render the `<Carousel />` with the state's images.
-      return (
-        
-      <Carousel enableAutoPlay autoPlaySpeed={5500} breakPoints={breakPoints}>
-        {images
-          .filter((image) => image.Poster && image.Poster !== "N/A")
-          .map((image, key) => {
-            if (image.Poster !== "N/A")
-              return (
-                <div key={image.id}>
-                  <img className="image" src={image.Poster} alt={image.title} />
-                </div>
-              );
-            else
-              return (
-                <div key={image.id}>
-                  <img className=".noDisplay" alt={image.title} />
-                </div>
-              );
+    return (
+        <Carousel enableAutoPlay autoPlaySpeed={3500} breakPoints={breakPoints}>
+          {images
+            .filter((image) => image.Poster && image.Poster !== "N/A")
+            .map((image, index) => {
+              return image.Poster !== "N/A" ? <div key={index}>
+                <img
+                  className="image"
+                  src={image.Poster}
+                  alt={image.title}
+                />
+              </div> : <div key={image.id}>
+                <img className=".noDisplay" alt={image.title} />
+              </div>;
           })}
-      </Carousel>
+        </Carousel>
     );
   }
 }
