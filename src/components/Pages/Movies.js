@@ -1,13 +1,18 @@
 import React from "react";
 import "../../App.css";
 import WelcomeBanner from "../WelcomeBanner";
-import Footer from "../footer";
+import AllMovies from "../AllMovies";
+import Pagination from "../AllMoviesPagination";
 
 export default function Movies() {
   return (
     <>
       <WelcomeBanner />
-      <h1 className="movies">MOVIES</h1>
+      <AllMovies />
+      <h1 className="movies"></h1>
+      <Pagination
+        
+      />
     </>
   );
 }

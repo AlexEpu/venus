@@ -6,8 +6,8 @@ import CarouselLoader from './CarouselLoader';
 const breakPoints = [
   { width: 500, itemsToShow: 3, autoplay: true },
   { width: 768, itemsToShow: 3, autoplay: true },
-  { width: 1200, itemsToShow: 5, autoplay: true },
-  { width: 1500, itemsToShow: 5, autoplay: true },
+  { width: 1200, itemsToShow:5, autoplay: true },
+  { width: 1500, itemsToShow:5, autoplay: true },
 ];
 
 export default class Carousell extends React.Component {
@@ -56,6 +56,7 @@ export default class Carousell extends React.Component {
 
     // #3. Finally, render the `<Carousel />` with the state's images.
     return (
+      
         <Carousel enableAutoPlay autoPlaySpeed={3500} breakPoints={breakPoints}>
           {images
             .filter((image) => image.Poster && image.Poster !== "N/A")
