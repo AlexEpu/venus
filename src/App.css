@@ -26,7 +26,7 @@
   /* font-size: 3rem; */
 }
 
-.home {
+/*.home{
   /* background: linear-gradient(90deg, rgb(39, 39, 39) 0%, rgb(36, 33, 33) 100%); */
   /* background:#222727; */
   /* background:#03fafa; */
@@ -34,9 +34,9 @@
   /* background-image: url('./images/img-1.jpg');
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat; 
   
-}
+}*/
 
 .movies {
   background-image: url('./images/img-2.jpg');
@@ -73,4 +73,5 @@
   color: #fff;
   font-size: 100px;
 }
+
 
