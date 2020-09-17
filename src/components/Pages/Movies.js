@@ -34,7 +34,7 @@ const defaultState={searchData:null,
 
   componentDidMount() {
     // #1. First of all you have to fetch the images.
-    fetch("https://ancient-caverns-16784.herokuapp.com/movies?take=9999999")
+    fetch("https://ancient-caverns-16784.herokuapp.com/movies?take=20")
       .then((response) => {
         if (!response.ok) {
           throw response;
@@ -72,13 +72,12 @@ const defaultState={searchData:null,
     return (
     <div>
       <input type="text" className="searchInput" onChange={(event=>this.search(event.target.value))}/>
-       
       <div>
       {
       this.state.searchData? 
       <div> 
         {this.state.searchData.map((item)=>
-           <img src={item.Poster}/>
+           <img  src={item.Poster}/>
            )}
       </div>
       : <div>
@@ -86,7 +85,7 @@ const defaultState={searchData:null,
       this.state.images? 
       <div> 
         {this.state.images.map((item)=>
-           <img src={item.Poster}/>
+           <img className="posters" src={item.Poster}/>
            )} 
 
       </div>
