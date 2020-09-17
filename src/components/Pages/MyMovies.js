@@ -115,20 +115,10 @@ class Search extends Component {
   };
 
   handleOnChange = (event) => {
-    fetch(
-      `https://ancient-caverns-16784.herokuapp.com/movies?take=10&Title=` +
-        event.target.value
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json.results);
-        this.setState({ data: json.results });
-      });
-
+    this.choicesUpdated("Title", event.target.value);
     this.setState({
       input: event.target.value,
     });
-    console.log(event.target.value);
   };
 
   componentDidMount() {
