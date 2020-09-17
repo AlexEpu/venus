@@ -2,7 +2,6 @@ import React from "react";
 import "../../App.css";
 import WelcomeBanner from "../WelcomeBanner";
 import AllMovies from "../AllMoviesContent";
-import Pagination from "../AllMoviesPagination";
 
 export default function Movies() {
   return (
