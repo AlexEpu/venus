@@ -6,10 +6,10 @@ import Cookies from "js-cookie";
 import {
   faEdit,
   faTrash,
-  faArrowLeft,
+  
 } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-bootstrap";
-import Modal from "react-bootstrap/Modal";
+
 
 export class MoviePage extends Component {
   constructor(props) {
@@ -73,17 +73,6 @@ export class MoviePage extends Component {
     });
   };
 
-  goBack = () => {
-    this.props.history.goBack();
-  };
-
-  showModal = () => {
-    this.setState({ show: true });
-  };
-
-  hideModal = () => {
-    this.setState({ show: false });
-  };
 
   render() {
     const { isLoggedIn } = this.props;
@@ -91,12 +80,7 @@ export class MoviePage extends Component {
 
     return (
       <div className="movie-page-container">
-        <div className="button-details-container">
-          <h5 className="back-button" onClick={this.goBack}>
-            <FontAwesomeIcon icon={faArrowLeft} />
-            GoBack
-          </h5>
-        </div>
+       
         {isLoaded ? (
           <h1></h1>
         ) : (
@@ -143,26 +127,7 @@ export class MoviePage extends Component {
                     <Button onClick={this.showModal}>
                       <FontAwesomeIcon icon={faTrash} />
                     </Button>
-                    <Modal
-                      size="lg"
-                      aria-labelledby="contained-modal-title-vcenter"
-                      centered
-                      show={this.state.show}
-                      handleClose={this.hideModal}
-                    >
-                      <Modal.Header>
-                        <Modal.Title id="contained-modal-title-vcenter">
-                          DELETE
-                        </Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>
-                        <p>maybe</p>
-                      </Modal.Body>
-                      <Modal.Footer>
-                        <Button onClick={this.handleDeleteMovie}>OK</Button>
-                        <Button onClick={this.hideModal}>Test</Button>
-                      </Modal.Footer>
-                    </Modal>
+                    
                   </div>
                 ) : (
                   ""
