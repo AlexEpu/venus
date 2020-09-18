@@ -18,6 +18,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-select": "^3.1.0",
+    "react-slider": "^1.0.9",
+    "rsuite": "^4.8.2",
     "styled-components": "^5.2.0"
   },
   "scripts": {

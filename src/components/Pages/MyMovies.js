@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import "../../App.css";
+import "./SearchFunction/Search.css"
 import { generateUrl } from "./SearchFunction/UrlSearch";
 import { fetchMovies } from "./SearchFunction/FetchMovies.js";
 import Country from "./SearchFunction/CountryFilter";
+import Genre from "./SearchFunction/GenreFilter";
+import Language from "./SearchFunction/LanguageFilter"
+import ImdbRatingF from "./SearchFunction/ImdbRatingF"
+import RuntimeFilter from"./SearchFunction/RuntimeFilter"
+import Year from "./SearchFunction/YearFilter"
+import Type from "./SearchFunction/TypeFilter"
+import MovieBox from "./SearchFunction/MoviePage"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+
 
 class Search extends Component {
   constructor(props) {
@@ -13,10 +23,10 @@ class Search extends Component {
       Country: null,
       data: null,
       input: "",
-      runtime: 0,
+      runtimeValue: 0,
       Year: "",
-      type: "",
-      imdbRating: 0,
+      Type: "",
+      imdbRatingValue: 0,
       inputValue: "",
       isLoaded: false,
       loading: false,
@@ -24,6 +34,7 @@ class Search extends Component {
       error: "",
       filters: {
         Title: "",
+        Type:"",
         Genre: "",
         Year: "",
         Language: "",
@@ -41,11 +52,11 @@ class Search extends Component {
         Language: null,
         Country: null,
         input: "",
-        runtime: 0,
+        runtimeValue: 0,
         Year: "",
         data: null,
-        type: "",
-        imdbRating: 0,
+        Type: "",
+        imdbRatingValue: 0,
         inputValue: "",
         isLoaded: false,
         loading: false,
@@ -54,6 +65,7 @@ class Search extends Component {
         filters: {
           Title: "",
           Genre: "",
+          Type:"",
           Year: "",
           Language: "",
           Country: "",
@@ -103,6 +115,20 @@ class Search extends Component {
     });
   };
 
+  
+  handleGenreChange = Genre => {
+
+    this.choicesUpdated('Genre', Genre.value);
+    this.setState({ Genre });
+
+  };
+
+  handleLanguageChange = Language => {
+
+    this.choicesUpdated('Language', Language.value);
+    this.setState({ Language });
+  };
+
   handleOnSearchChange = (inputValue) => {
     this.setState({ input: inputValue, loading: true });
 
@@ -120,6 +146,54 @@ class Search extends Component {
       input: event.target.value,
     });
   };
+  
+  handleImdbRantingChangeValue  = (imdbRatingValue) => {
+    this.setState({
+      imdbRatingValue
+    })
+  }
+
+  handleImdbRatingChange  = changeEvent => {
+
+    this.choicesUpdated('imdbRating', changeEvent);
+
+  };
+  
+  updateRuntime = (runtimeValue) => {
+    this.setState({
+      runtimeValue
+    })
+
+  }
+
+  
+  runtimeChange = changeEvent => {
+    let selectedRuntime = changeEvent + " min";
+    console.log(changeEvent)
+  
+
+    this.choicesUpdated('Runtime', selectedRuntime);
+
+  };
+  
+  handleYearChange = (event) => {
+
+    const inputYear = event.target.value;
+    this.setState({ Year: inputYear});
+
+    this.choicesUpdated('Year', inputYear);
+
+
+  };
+
+  handleTypeChange = Type => {
+
+    this.choicesUpdated('Type', Type.value);
+    this.setState({ Type });
+
+  };
+
+
 
   componentDidMount() {
     fetchMovies().then((json) => {
@@ -143,11 +217,18 @@ class Search extends Component {
           handleCountryChange={this.handleCountryChange}
           Country={this.state.Country}
         />
-
+        <Genre handleGenreChange={this.handleGenreChange} Genre={this.state.Genre} />
+        <Type handleTypeChange={this.handleTypeChange} Type={this.state.Type}/>
+        <Language handleLanguageChange={this.handleLanguageChange} Language={this.state.Language}/>
+        <ImdbRatingF onImdbRatingChange={this.handleImdbRatingChange} imdbRatingValue={this.state.imdbRatingValue} updateImdbRatingValue={this.handleImdbRantingChangeValue} />
+        <RuntimeFilter updateRuntime={this.updateRuntime} runtimeValue={this.state.runtimeValue} runtimeChange={this.runtimeChange}/>
+        <Year handleYearChange={this.handleYearChange} Year={this.state.Year}/>
         {this.state.data ? (
           <div>
-            {this.state.data.map((item, index) => (
-              <img key={index} src={item.Poster} />
+            {this.state.data.map((item, index) => ( 
+              <Link to="/MoviePage">
+              <img key={index} src={item.Poster} />s
+              </Link>
             ))}
           </div>
         ) : (
@@ -155,7 +236,7 @@ class Search extends Component {
             {this.state.movies ? (
               <div>
                 {this.state.movies.map((item) => (
-                  <img className="posters" src={item.Poster} />
+                  <img className="posters" src={item.Poster}  />
                 ))}
               </div>
             ) : (
@@ -163,7 +244,9 @@ class Search extends Component {
             )}
           </div>
         )}
-        <div></div>
+        <div>
+        
+        </div>
       </div>
     );
   }
