@@ -28,6 +28,7 @@ render(){
     return(
         <div className="languageContainer">
             <Select value={Language}
+            className="languageOption"
             placeholder="Select Language"
             onChange={this.handleChange}
             options={options}/>

@@ -24,7 +24,7 @@ const options = [
           const {Type}=this.props;
           return(
               <div className="TypeContainer">
-                  <Select value={Type} placeholder="Select Type" onChange={this.handleChange} options={options} />
+                  <Select className="typeOption" value={Type} placeholder="Select Type" onChange={this.handleChange} options={options} />
   
   
   

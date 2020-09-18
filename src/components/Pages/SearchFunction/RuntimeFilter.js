@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./RuntimeFilter.css";
-import Slider from '@material-ui/core/Slider';
+import TextField from '@material-ui/core/TextField';
 
 
  class RuntimeFilter extends Component
@@ -8,17 +8,16 @@ import Slider from '@material-ui/core/Slider';
 
     handleOnChange=(value)=>{
 
-        this.props.runtimeChange(value);
+        this.props.updateRuntimeValue(value);
     }
 
     render(){
         const {runtimeValue}=this.props;
 
         return(
-            <div className="runtimeContainer" onMouseUp={() => { this.props.updateRuntime(runtimeValue) }}>
-            <p>Movie Duration</p>
-            <Slider className="slider" value={runtimeValue} onChange={changeEvent=>this.handleOnChange(changeEvent.target.value)}
-            max={300}/>
+            <div className="runtimeContainer" onMouseLeave={() => { this.props.onRuntimeChange(runtimeValue) }}>
+            <TextField id="outlined-basic" placeholder="Enter Minutes" label="Movie Duration" variant="outlined" className="runtimeInput" value={runtimeValue} onChange={changeEvent=>this.handleOnChange(changeEvent.target.value)}
+            />
 
             </div>
 

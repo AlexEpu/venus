@@ -3,7 +3,7 @@ import "./ImdbRatingF.css";
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import Slider from '@material-ui/core/Slider';
+import TextField from '@material-ui/core/TextField';
 
 
 
@@ -16,14 +16,13 @@ handleOnChange=(value)=>{
 
 
 render(){
-    const{imdbRatingValue }=this.props;
+    const{imdbRatingValue}=this.props;
 
 
     return(
-        <div className="imdbContainer" onMouseUp={() => { this.props.onImdbRatingChange(imdbRatingValue ) }}>
-            <p>IMDB rating</p>
-            <Slider className="slider" value={imdbRatingValue}  onChange={changeEvent=>this.handleOnChange(changeEvent.target.value)}
-            max={10} min={1}  defaultValue={1} 
+        <div className="imdbContainer" onMouseLeave={() => { this.props.onImdbRatingChange(imdbRatingValue) }}>
+            <TextField className="imdbInput"  variant="outlined" id="outlined-basic" label="IMDB Rating" value={imdbRatingValue}  placeholder="Enter IMDB rating" onChange={changeEvent=>this.handleOnChange(changeEvent.target.value)}
+           
 
             />
 

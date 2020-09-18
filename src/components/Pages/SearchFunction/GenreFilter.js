@@ -33,7 +33,7 @@ const options = [
         const {Genre}=this.props;
         return(
             <div className="genreContainer">
-                <Select value={Genre} placeholder="Select Genre" onChange={this.handleChange} options={options} />
+                <Select className="genreSelect" value={Genre} placeholder="Select Genre" onChange={this.handleChange} options={options} />
 
 
 

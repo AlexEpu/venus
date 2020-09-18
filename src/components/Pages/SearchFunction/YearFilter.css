@@ -1,5 +1,8 @@
-.yearContainer{  width:150px;
+.yearContainer{  width:180px;
     border-color: black;
     height:80px;
+    padding: 5px;
+    margin:5px;
+    border-radius: 20px;
     border-width: 10px;
     padding:5px;}
