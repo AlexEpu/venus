@@ -8,14 +8,14 @@ import TextField from '@material-ui/core/TextField';
 
     handleOnChange=(value)=>{
 
-        this.props.updateRuntimeValue(value);
+        this.props.handleRuntimeChange(value);
     }
 
     render(){
         const {runtimeValue}=this.props;
 
         return(
-            <div className="runtimeContainer" onMouseLeave={() => { this.props.onRuntimeChange(runtimeValue) }}>
+            <div className="runtimeContainer" onMouonseOut={() => { this.props.handleRuntime(runtimeValue) }}>
             <TextField id="outlined-basic" placeholder="Enter Minutes" label="Movie Duration" variant="outlined" className="runtimeInput" value={runtimeValue} onChange={changeEvent=>this.handleOnChange(changeEvent.target.value)}
             />
 

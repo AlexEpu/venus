@@ -11,7 +11,7 @@ import TextField from '@material-ui/core/TextField';
  class ImdbRatingF extends Component{
 
 handleOnChange=(value)=>{
-    this.props.updateImdbRatingValue(value);
+    this.props.ratingValue(value);
 }
 
 
@@ -20,7 +20,7 @@ render(){
 
 
     return(
-        <div className="imdbContainer" onMouseLeave={() => { this.props.onImdbRatingChange(imdbRatingValue) }}>
+        <div className="imdbContainer" onMouseOut={() => { this.props.ratingChange(imdbRatingValue) }}>
             <TextField className="imdbInput"  variant="outlined" id="outlined-basic" label="IMDB Rating" value={imdbRatingValue}  placeholder="Enter IMDB rating" onChange={changeEvent=>this.handleOnChange(changeEvent.target.value)}
            
 
