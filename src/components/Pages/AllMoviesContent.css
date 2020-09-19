@@ -1,0 +1,106 @@
+.movie-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin-top: 300px;
+    margin-bottom: 10px;
+}
+
+
+.movie-poster-details {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    margin-top: 20px;
+    margin-right: 10 px;
+}
+
+.movie-card-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pag-container {
+    margin-bottom: 100px;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+.card-img-top {
+    height: 440px !important;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    border: none !important;
+    outline: none !important;
+    background-image: url(../images/backimg1.png);
+    background-size: cover;
+
+}
+
+img {
+    border: none !important;
+    outline: none !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    /* background-image: url(../images/backimg1.png); */
+    background-clip: border-box;
+    border: none !important;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    margin: 20px;
+    margin-top: 0px !important;
+    width: 330px !important;
+    text-decoration: none;
+    font-size: 1em;
+    list-style-type: none;
+}
+
+
+.card-body {
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    background-image: url(../images/backimg1.png);
+    background-size: cover;
+    min-height: 120px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+.movie-title {
+
+margin-top: 5px;
+font-family: 'Montserrat',
+sans-serif;
+font-weight: bold;
+color:#F73A4C;
+font-size: 13px;
+}
+
+.movie-title-text {
+white-space: pre-wrap;
+margin-top: 10px;
+font-family: 'Montserrat',
+sans-serif;
+font-weight: bold;
+color: #54ab93;
+font-size: 12px;
+text-align: center;
+}
