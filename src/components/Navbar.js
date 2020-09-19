@@ -16,7 +16,9 @@ export class Navbar extends Component {
 
   constructor(props){
     super(props)
-    this.state={message:""}
+    this.state={message:"", token:""
+    }
+    
 
 
     this.handleLogOut = () => {
@@ -25,6 +27,7 @@ export class Navbar extends Component {
         headers: {
           "X-Auth-Token":localStorage.removeItem("accessToken"),
         },
+
       })
         .then((res) => res.json())
         .then((json) => {
@@ -34,6 +37,7 @@ export class Navbar extends Component {
   
         });
         return true;
+
     };
 
 
@@ -46,7 +50,7 @@ export class Navbar extends Component {
         <nav className="navbar">
           <div>
             <ul className="on-login-buttons">
-              {localStorage.getItem("accessToken") ? (
+              {window.localStorage.getItem("accessToken") ? (
                 <React.Fragment>
                   <li className="AddButton">
                     <Link to="/addmovie">
@@ -60,6 +64,7 @@ export class Navbar extends Component {
                   <div 
                    className="log-out-Button"> 
                     <FontAwesomeIcon icon={faSignOutAlt} onClick={this.handleLogOut} />
+                    <h1>{this.state.message}</h1>
                   </div>
                 </React.Fragment>
               ) : (

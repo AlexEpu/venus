@@ -96,7 +96,7 @@ export class Login extends React.Component {
 
 
   render() {
-    if(this.state.isLoggedIn){
+    if(this.state.isLoggedIn && localStorage.getItem("accessToken") ){
       return <Redirect to="./Movies"/> 
     }
 
