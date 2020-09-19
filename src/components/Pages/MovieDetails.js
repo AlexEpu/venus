@@ -7,7 +7,6 @@ export default function MovieDetails() {
   return (
     <>
       <WelcomeBanner />
-      <MoviePage/>
          
           
     </>

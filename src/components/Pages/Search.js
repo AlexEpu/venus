@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "./SearchFunction/Search.css"
 import { generateUrl } from "./SearchFunction/UrlSearch";
 import { fetchMovies } from "./SearchFunction/FetchMovies.js";
@@ -249,8 +250,11 @@ class Search extends Component {
           <div >
             {this.state.movies ? (
               <div className="photo-cards">
-                {this.state.movies.filter((image) => image.Poster && image.Poster !== "N/A").map((image) => (
+                {this.state.movies.filter((image) => image.Poster && image.Poster !== "N/A").map((image,index) => (
+                  <Link to={`/movie-details?id=${image._id}`} key={index}>
+
                   <img className="posters" src={image.Poster}  />
+                  </Link>
                 ))}
               </div>
             ) : <div>
