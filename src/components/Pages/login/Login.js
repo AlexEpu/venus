@@ -1,6 +1,8 @@
 import React from "react";
 import loginImg from "./login.svg";
 import { Redirect } from 'react-router-dom'
+import createHistory from 'history/createBrowserHistory'
+
 
 
 const defaultState={username:"",
@@ -95,10 +97,12 @@ export class Login extends React.Component {
   };
 
 
-  render() {
+  render() {const history = createHistory();
+
     if(this.state.isLoggedIn && localStorage.getItem("accessToken") ){
-      return <Redirect to="./Movies"/> 
+      return <Redirect to="./Movies" /> 
     }
+    if(localStorage.getItem("accessToken")){return <div><h3> You are already logged in </h3></div>}
 
     return (
       <div className="base-container" ref={this.props.containerRef}>
@@ -131,7 +135,7 @@ export class Login extends React.Component {
         <div className="valid">
             
               </div> 
-          <button type="submit" className="btn-login" onClick={this.handleSubmit}>
+          <button type="submit" className="btn-login" onClick={this.handleSubmit} >
             Login
           </button>
         </div>

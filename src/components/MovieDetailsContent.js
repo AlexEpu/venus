@@ -74,15 +74,14 @@ export class MoviePage extends Component {
     });
   };
 
-
-  handleEditMovie = () => {
+/*handleEditMovie = () => {
     
     const logInToken = localStorage.getItem("accessToken");
     const movieLocalID = localStorage.getItem("movieID").replace(/["']/g, "");
-    const movieDelete = `https://movies-app-siit.herokuapp.com/movies/${movieLocalID}`;
+    const movieEdit = `https://movies-app-siit.herokuapp.com/movies/${movieLocalID}`;
     // console.log(movieDelete);
     // console.log(logInToken);
-    fetch(movieDelete, {
+    fetch(movieEdit, {
       method: "PUT",
       mode: "cors",
       cache: "no-cache",
@@ -97,10 +96,8 @@ export class MoviePage extends Component {
     });
   };
 
-
-
-
-
+*/
+  
 
 
   render() {

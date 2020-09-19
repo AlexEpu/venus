@@ -16,8 +16,7 @@ export class Navbar extends Component {
 
   constructor(props){
     super(props)
-    this.state={message:"", token:""
-    }
+    this.state={message:""}
     
 
 
@@ -45,15 +44,16 @@ export class Navbar extends Component {
 
   render() {
     const { isLoggedIn, username, onShowLogOutModal } = this.props;
+
     return (
       <>
         <nav className="navbar">
           <div>
             <ul className="on-login-buttons">
-              {window.localStorage.getItem("accessToken") ? (
+              {localStorage.getItem("accessToken") ? (
                 <React.Fragment>
                   <li className="AddButton">
-                    <Link to="/addmovie">
+                    <Link to="./Addmovie">
                       <p>Add</p>
                     </Link>
                   </li>
@@ -62,9 +62,11 @@ export class Navbar extends Component {
                     {username}
                   </li>
                   <div 
-                   className="log-out-Button"> 
+                   className="log-out-Button">
+                     <Link to="/join-us">
                     <FontAwesomeIcon icon={faSignOutAlt} onClick={this.handleLogOut} />
                     <h1>{this.state.message}</h1>
+                    </Link>
                   </div>
                 </React.Fragment>
               ) : (

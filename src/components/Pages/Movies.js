@@ -3,8 +3,10 @@ import "../../App.css";
 import WelcomeBanner from "../WelcomeBanner";
 import AllMovies from "../AllMoviesContent";
 import Pagination from "../AllMoviesPagination";
+import AddMovie from "./AddMovieFunctionality"
 
 export default function Movies() {
+  
   return (
     <>
       <WelcomeBanner />
