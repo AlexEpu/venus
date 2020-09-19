@@ -9,6 +9,7 @@ import {
   
 } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-bootstrap";
+import EditForm from "./Pages/EditMovieFunctionality"
 
 
 export class MoviePage extends Component {
@@ -111,7 +112,7 @@ export class MoviePage extends Component {
         {isLoggedIn ? (
           <h1></h1>
         ) : (
-          <React.Fragment key={movie} movie={this.state.movie}>
+          <React.Fragment key={movie} >
             <div className="movie-poster-details-container">
               <div className="movie-poster">
                 <img className="poster" src={movie.Poster} alt="" />
@@ -143,14 +144,10 @@ export class MoviePage extends Component {
                 </div>
                 {localStorage.getItem("accessToken") ? (
                   <div className="willseeclass">
-                    <Button>
-                      <Link
-                        to={`/willsee?id=${movie._id}`}
-                        style={{ textDecoration: "none" }}
-                        
-                      >
+                    <Button >
+                    <EditForm movie={this.state.movie}/>
+                      
                         <FontAwesomeIcon icon={faEdit} />
-                      </Link>
                     </Button>
                     <Button onClick={this.handleDeleteMovie}>
                       <Link to={'/Movies'}>
