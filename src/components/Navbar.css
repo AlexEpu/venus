@@ -366,3 +366,9 @@ transition: all 0.4s ease-in-out;
         display: none;
     }
 }
+
+
+.log-out-Button{margin-left:50px;
+cursor: pointer;}
+
+.AddButton{margin-left: 50px;}

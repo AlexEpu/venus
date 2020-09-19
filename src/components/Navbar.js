@@ -13,18 +13,42 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import BurgerNav from "./BurgerCall";
 
 export class Navbar extends Component {
+
+  constructor(props){
+    super(props)
+    this.state={message:""}
+
+
+    this.handleLogOut = () => {
+      fetch("https://movies-app-siit.herokuapp.com/auth/logout", {
+        method: "GET",
+        headers: {
+          "X-Auth-Token":localStorage.removeItem("accessToken"),
+        },
+      })
+        .then((res) => res.json())
+        .then((json) => {
+          console.log(json);
+          const message=json.message
+          this.setState({message})
+  
+        });
+        return true;
+    };
+
+
+  }
+
   render() {
     const { isLoggedIn, username, onShowLogOutModal } = this.props;
-    
-
     return (
       <>
         <nav className="navbar">
           <div>
             <ul className="on-login-buttons">
-              {isLoggedIn ? (
+              {localStorage.getItem("accessToken") ? (
                 <React.Fragment>
-                  <li>
+                  <li className="AddButton">
                     <Link to="/addmovie">
                       <p>Add</p>
                     </Link>
@@ -33,11 +57,9 @@ export class Navbar extends Component {
                     <FontAwesomeIcon icon={faUser} className="usernameIcon" />
                     {username}
                   </li>
-                  <div onClick={onShowLogOutModal}
-                   
-                    className="log-out-Button"
-                  >
-                    <FontAwesomeIcon icon={faSignOutAlt} />
+                  <div 
+                   className="log-out-Button"> 
+                    <FontAwesomeIcon icon={faSignOutAlt} onClick={this.handleLogOut} />
                   </div>
                 </React.Fragment>
               ) : (

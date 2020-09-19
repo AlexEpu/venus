@@ -52,7 +52,8 @@ export class MoviePage extends Component {
   }
 
   handleDeleteMovie = () => {
-    const logInToken = localStorage.get("token");
+    
+    const logInToken = localStorage.getItem("accessToken");
     const movieLocalID = localStorage.getItem("movieID").replace(/["']/g, "");
     const movieDelete = `https://movies-app-siit.herokuapp.com/movies/${movieLocalID}`;
     // console.log(movieDelete);
@@ -74,14 +75,43 @@ export class MoviePage extends Component {
   };
 
 
+  handleEditMovie = () => {
+    
+    const logInToken = localStorage.getItem("accessToken");
+    const movieLocalID = localStorage.getItem("movieID").replace(/["']/g, "");
+    const movieDelete = `https://movies-app-siit.herokuapp.com/movies/${movieLocalID}`;
+    // console.log(movieDelete);
+    // console.log(logInToken);
+    fetch(movieDelete, {
+      method: "PUT",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "x-auth-token": logInToken,
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+    }).then(() => {
+      this.props.history.push("/");
+    });
+  };
+
+
+
+
+
+
+
   render() {
     const { isLoggedIn } = this.props;
+
     const { movie, isLoaded } = this.state;
 
     return (
       <div className="movie-page-container">
        
-        {isLoaded ? (
+        {isLoggedIn ? (
           <h1></h1>
         ) : (
           <React.Fragment key={movie}>
@@ -114,18 +144,21 @@ export class MoviePage extends Component {
                     </ul>
                   </div>
                 </div>
-                {isLoggedIn ? (
+                {localStorage.getItem("accessToken") ? (
                   <div className="willseeclass">
                     <Button>
                       <Link
                         to={`/willsee?id=${movie._id}`}
                         style={{ textDecoration: "none" }}
+                        
                       >
                         <FontAwesomeIcon icon={faEdit} />
                       </Link>
                     </Button>
-                    <Button onClick={this.showModal}>
+                    <Button onClick={this.handleDeleteMovie}>
+                      <Link to={'/Movies'}>
                       <FontAwesomeIcon icon={faTrash} />
+                      </Link>
                     </Button>
                     
                   </div>

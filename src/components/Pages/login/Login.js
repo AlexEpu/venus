@@ -97,7 +97,7 @@ export class Login extends React.Component {
 
   render() {
     if(this.state.isLoggedIn){
-      return <Redirect to="./MyMovies"/> 
+      return <Redirect to="./Movies"/> 
     }
 
     return (
