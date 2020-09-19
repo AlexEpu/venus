@@ -2,7 +2,6 @@ import { render } from "@testing-library/react";
 import React from "react";
 import { Component } from "react";
 import "./AddMovieFunctionality.css"
-import{handleImputs,shouldAddMovie} from "./ValidateAddMovie"
 
  class AddMovie extends Component{
 constructor(props){
@@ -56,7 +55,6 @@ constructor(props){
                 ImdbRating: "",
                 imdbID: "",
                 Type: "",
-                Error:""
 
               });
         };

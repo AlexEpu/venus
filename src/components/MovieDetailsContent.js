@@ -111,7 +111,7 @@ export class MoviePage extends Component {
         {isLoggedIn ? (
           <h1></h1>
         ) : (
-          <React.Fragment key={movie}>
+          <React.Fragment key={movie} movie={this.state.movie}>
             <div className="movie-poster-details-container">
               <div className="movie-poster">
                 <img className="poster" src={movie.Poster} alt="" />
