@@ -25,6 +25,7 @@ constructor(props){
         submitMovie=(event)=>{
             event.preventDefault();
 
+
             let data={
                 Title: this.state.Title,
                 Country: this.state.Country,
@@ -39,6 +40,7 @@ constructor(props){
                 Type: this.state.Type,
 
             };
+            console.log(this.state)
             this.addMovie(data);
             this.setState({
                 Title: "",
@@ -53,7 +55,6 @@ constructor(props){
                 imdbID: "",
                 Type: "",
               });
-              console.log(this.state.Title)
         };
 
        
@@ -82,7 +83,11 @@ constructor(props){
         }
 
         changeSubmissions=(event)=>{
-            this.setState({[event.target.name]:event.target.value});
+            const target = event.target;
+            const value = target.value;
+            const name = target.name;
+
+            this.setState({[name]:value});
             console.log(event.target.value)
             console.log(event.target.name)
         };
@@ -96,31 +101,31 @@ constructor(props){
         
             <div className="AddForm">
                 <div id="form">
-                    <form >
+                    <form onSubmit={this.submitMovie} >
                         <label className="addMovieTitle">Movie Title</label>
-                        <input type="text" placeholder="Enter Movie Title" name="title" onChange={event=> (this.changeSubmissions(event))}/>
+                        <input type="text" placeholder="Enter Movie Title"  name="Title" onChange={event=> (this.changeSubmissions(event))}/>
                         <label className="addYear">Year</label>
-                        <input  type="number" placeholder="Enter a Year"  name="year" onChange={this.changeSubmissions}></input>
+                        <input  type="number" placeholder="Enter a Year"  name="Year" onChange={this.changeSubmissions}></input>
                         <label className="addCountry">Country</label>
-                        <input  type="text" placeholder="Enter a Country"  name="country" onChange={this.changeSubmissions}></input>
+                        <input  type="text" placeholder="Enter a Country"  name="Country" onChange={this.changeSubmissions}></input>
                         <label className="addGenre">Genre</label>
-                        <input  type="text" placeholder="Enter a Genre"  name="genre" onChange={this.changeSubmissions}></input>
+                        <input  type="text" placeholder="Enter a Genre"  name="Genre" onChange={this.changeSubmissions}></input>
                         <label className="addLanguage">Year</label>
-                        <input  type="text" placeholder="Enter Language"  name="language" onChange={this.changeSubmissions}></input>
+                        <input  type="text" placeholder="Enter Language"  name="Language" onChange={this.changeSubmissions}></input>
                         <label className="addRuntime">Runtime</label>
-                        <input  type="number" placeholder="Enter Movie Runtime"  name="runtime" onChange={this.changeSubmissions}></input>
+                        <input  type="number" placeholder="Enter Movie Runtime"  name="Runtime" onChange={this.changeSubmissions}></input>
                         <label className="addImdbVotes">IMDB votes</label>
-                        <input  type="number" placeholder="Enter IMDB vote" name="imdbVotes" onChange={this.changeSubmissions}></input>
+                        <input  type="number" placeholder="Enter IMDB vote" name="ImdbVotes" onChange={this.changeSubmissions}></input>
                         <label className="addImdbRating">IMDB Rating</label>
-                        <input  type="number" placeholder="Enter IMDB rating" name="imdbRating" onChange={this.changeSubmissions}></input>
+                        <input  type="number" placeholder="Enter IMDB rating" name="ImdbRating" onChange={this.changeSubmissions}></input>
                         <label className="addID">IMDB ID</label>
                         <input  type="text" placeholder="Enter IMDB ID"  name="imdbID" onChange={this.changeSubmissions}></input>
                         <label className="addPoster">Poster</label>
-                        <input  type="text" placeholder="Enter Poster URL"  name="poster" onChange={this.changeSubmissions}></input>
+                        <input  type="text" placeholder="Enter Poster URL"  name="Poster" onChange={this.changeSubmissions}></input>
                         <label className="addType">Type</label>
-                        <input  type="text" placeholder="Enter Type"  name="type" onChange={this.changeSubmissions}></input>
+                        <input  type="text" placeholder="Enter Type"  name="Type" onChange={this.changeSubmissions}></input>
                         <div className="addMovieButton"> 
-                        <button onClick={this.submitMovie}>Add Movie</button>
+                        <button >Add Movie</button>
                         </div>
     
                     </form>
