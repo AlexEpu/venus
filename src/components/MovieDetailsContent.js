@@ -145,7 +145,7 @@ export class MoviePage extends Component {
                 {localStorage.getItem("accessToken") ? (
                   <div className="willseeclass">
                     <Button >
-                    <EditForm movie={this.state.movie}/>
+                    {/* <EditForm movie={this.state.movie}/> */}
                       
                         <FontAwesomeIcon icon={faEdit} />
                     </Button>
