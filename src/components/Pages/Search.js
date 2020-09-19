@@ -251,7 +251,8 @@ class Search extends Component {
             {this.state.movies ? (
               <div className="photo-cards">
                 {this.state.movies.filter((image) => image.Poster && image.Poster !== "N/A").map((image,index) => (
-                  
+              <img className="posters" key={index} src={image.Poster} />
+
                 ))}
               </div>
             ) : <div>

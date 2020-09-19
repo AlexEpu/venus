@@ -59,12 +59,16 @@ export class Login extends React.Component {
   return true;
   }
 
+ 
+
   handleSubmit = event => {
+
     event.preventDefault();
     const isValid = this.validate();
-
       this.setState({submitted:true})
       const{username,password}=this.state;
+
+ 
     
 
       if (isValid) {
@@ -97,20 +101,20 @@ export class Login extends React.Component {
 
   render() {
     if(this.state.isLoggedIn){
-      return <Redirect to="./MyMovies"/> 
-    }
-
-    return (
+      return <Redirect to="./Movies"/>
+        }
+      if(localStorage.getItem("accessToken")){return <div><h3> You are already logged in </h3></div>}
+    return ( 
       <div className="base-container" ref={this.props.containerRef}>
         <div className="header">Login</div>
         <div className="content">
           <div className="image-login">
             <img alt="login "src={loginImg} />
           </div>
-          <div className="form" onSubmit={this.handleSubmit}>
+          <div className="form" onSubmit={this.handleSubmit} >
             <div  className="form-group">
               <label htmlFor="username">Username</label>
-              <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
+              <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} />
               <div className="valid">
             {this.state.usernameError}
             
@@ -131,7 +135,7 @@ export class Login extends React.Component {
         <div className="valid">
             
               </div> 
-          <button type="submit" className="btn-login" onClick={this.handleSubmit}>
+          <button id="button"type="submit" className="btn-login" onClick={this.handleSubmit} onEnter={this.handleEnter} >
             Login
           </button>
         </div>
