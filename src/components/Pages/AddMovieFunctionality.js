@@ -4,8 +4,9 @@ import { Component } from "react";
 import "./AddMovieFunctionality.css"
 
  class AddMovie extends Component{
-
-        state={
+constructor(props){
+    super(props)
+        this.state={
             Title: "",
             Year: "",
             Genre: "",
@@ -19,7 +20,7 @@ import "./AddMovieFunctionality.css"
             Type: "",
         }        
 
-        
+    } 
 
         submitMovie=(event)=>{
             event.preventDefault();
@@ -52,6 +53,7 @@ import "./AddMovieFunctionality.css"
                 imdbID: "",
                 Type: "",
               });
+              console.log(this.state.Title)
         };
 
        
@@ -96,7 +98,7 @@ import "./AddMovieFunctionality.css"
                 <div id="form">
                     <form >
                         <label className="addMovieTitle">Movie Title</label>
-                        <input type="text" placeholder="Enter Movie Title" name="title" onChange={this.changeSubmissions}/>
+                        <input type="text" placeholder="Enter Movie Title" name="title" onChange={event=> (this.changeSubmissions(event))}/>
                         <label className="addYear">Year</label>
                         <input  type="number" placeholder="Enter a Year"  name="year" onChange={this.changeSubmissions}></input>
                         <label className="addCountry">Country</label>
