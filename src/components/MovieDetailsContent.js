@@ -52,7 +52,7 @@ export class MoviePage extends Component {
   }
 
   handleDeleteMovie = () => {
-    const logInToken = Cookies.get("token");
+    const logInToken = localStorage.get("token");
     const movieLocalID = localStorage.getItem("movieID").replace(/["']/g, "");
     const movieDelete = `https://movies-app-siit.herokuapp.com/movies/${movieLocalID}`;
     // console.log(movieDelete);
