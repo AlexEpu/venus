@@ -427,10 +427,9 @@ input {
 }
 
 .MuiButton-containedPrimary:hover {
-    color:  rgb(0, 255, 0);
+    color: rgb(0, 255, 0);
     background-color: transparent !important;
     /* background-color: #d13242 !important; */
     /* border: 2px solid green; */
     border: 2px solid rgb(0, 255, 0);
 }
-
