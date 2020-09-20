@@ -97,9 +97,10 @@ export class Navbar extends Component {
 
           <BurgerNav />
           <SearchBarNav />
-          <Link to="/join-us">
+          {localStorage.getItem("accessToken")? "": <Link to="/join-us">
             <i className="fas fa-user user-icon fa-lg"></i>
-          </Link>
+          </Link> }
+          
         </nav>
       </>
     );

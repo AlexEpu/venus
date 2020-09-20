@@ -105,7 +105,6 @@ export class Login extends React.Component {
     if(this.state.isLoggedIn && localStorage.getItem("accessToken") ){
       return <Redirect to="./Movies" /> 
     }
-    if(localStorage.getItem("accessToken")){return <div><h3> You are already logged in </h3></div>}
 
     return (
       <div className="base-container" ref={this.props.containerRef}>
@@ -125,7 +124,7 @@ export class Login extends React.Component {
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange}/>
+              <input type="password" name="password" placeholder="password"  onChange={this.handleChange}/>
               <div  className="valid">
             {this.state.passwordError}
             {this.state.loginErr}
