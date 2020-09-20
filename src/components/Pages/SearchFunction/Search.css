@@ -96,6 +96,7 @@ input {
 .search-container {
     left: auto;
     display: flex;
+
     /* background-color: black; */
     /* height: 1000px; */
     width: 70%;

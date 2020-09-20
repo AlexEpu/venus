@@ -1,5 +1,8 @@
+
+import Card from "react-bootstrap/Card";
 import React, { Component } from "react";
 import "./SearchFunction/Search.css";
+import "../AllMoviesContent.css";
 import { generateUrl } from "./SearchFunction/UrlSearch";
 import { fetchMovies } from "./SearchFunction/FetchMovies.js";
 import Country from "./SearchFunction/CountryFilter";
@@ -173,7 +176,7 @@ class Search extends Component {
   };
 
   componentDidMount() {
-    fetchMovies().then((json) => {
+    fetchMovies("https://movies-app-siit.herokuapp.com/movies?take=10000").then((json) => {
       this.setState({ isLoaded: true, movies: json.results });
     });
   }
@@ -247,33 +250,44 @@ class Search extends Component {
             </div>
           </div>
 
-          {this.state.data ? (
-            <div className="photo-cards">
-              {this.state.data
+          {this.state.movies ? (
+            <div className={"movie-card-main-container"}>
+            <div className="movie-card-container">
+              {this.state.movies
                 .filter((image) => image.Poster && image.Poster !== "N/A")
                 .map((image, index) => (
-                  <Link to="/MoviePage">
-                    <img className="posters" key={index} src={image.Poster} />s
+                  <Link to={`/movie-details?id=${image._id}`} key={index}>
+                    <div>
+                <div className="movie-poster-details">
+                  <>
+                    <Card>
+                      <Card.Img
+                        className="movie-poster"
+                        top
+                        variant="top"
+                        src={image.Poster}
+                      />
+                      <Card.Body>
+                        <Card.Title className="movie-title">
+                          {image.Title}
+                        </Card.Title>
+                        <Card.Text className="movie-title-text">
+                          <li>Genre: {image.Genre}</li>
+                          <li>Rating: {image.imdbRating}</li>
+                          <li>Year: {image.Year}</li>
+                          
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </>
+                </div>
+              </div>
                   </Link>
                 ))}
             </div>
-          ) : (
-            <div className="photo-card-container">
-              {this.state.movies ? (
-                <div className="photo-cards">
-                  {this.state.movies
-                    .filter((image) => image.Poster && image.Poster !== "N/A")
-                    .map((image) => (
-                      <img className="posters" src={image.Poster} />
-                    ))}
-                </div>
-              ) : (
-                <div>
-                  <NoResult />
-                </div>
-              )}
             </div>
-          )}
+          ) :""}
+          
           <div></div>
         </div>
       );
