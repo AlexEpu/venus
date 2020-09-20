@@ -9,6 +9,7 @@ import JoinUs from "./components/Pages/JoinUs";
 import MoviePage from "./components/MovieDetailsContent";
 import MovieSearch from "./components/Pages/MovieSearch";
 import AddMovie from "./components/Pages/AddMovieFunctionality";
+import EditPage from "./components/Pages/EditPage"
 import Cookies from "js-cookie";
 import { Component } from "react";
 //import WelcomeBanner from "./components/WelcomeBanner";
@@ -103,6 +104,7 @@ class GlobalUtils extends Component {
         <Route path="/myaccount" component={MyAccount} />
         <Route path="/join-us" component={JoinUs} />
         <Route path="/Addmovie" component={AddMovie} />
+        <Route path="/EditPage" component={EditPage}/>
         <Route
           exact
           path="/movie-details"
@@ -110,6 +112,7 @@ class GlobalUtils extends Component {
             <MoviePage {...props} isLoggedIn={isLoggedIn} />
           )}
         />
+        
       </Router>
     );
   }

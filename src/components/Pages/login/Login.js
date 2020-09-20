@@ -2,6 +2,7 @@ import React from "react";
 import loginImg from "./login.svg";
 import { Redirect } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
+import Cookies from "js-cookie";
 
 
 
@@ -91,7 +92,9 @@ export class Login extends React.Component {
         this.setState({loginErr:err});
         localStorage.setItem("accessToken", json.accessToken);
         if(!this.state.loginErr) this.setState({isLoggedIn:true})
+        Cookies.set("username",this.state.username)
         this.setState(defaultState);
+        window.location="/";
       });
     }
   };

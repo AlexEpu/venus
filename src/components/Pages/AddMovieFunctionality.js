@@ -56,7 +56,8 @@ class AddMovie extends Component {
       ImdbRating: "",
       imdbID: "",
       Type: "",
-      isLoaded: "",
+      Error: "",
+      isLoaded: false,
     });
   };
 
@@ -270,6 +271,7 @@ class AddMovie extends Component {
                 </label>
                 <input
                   type="text"
+                  value={this.state.Type}
                   placeholder="Enter Type"
                   name="Type"
                   onChange={this.changeSubmissions}
@@ -282,7 +284,7 @@ class AddMovie extends Component {
                 </div>
                 {this.state.isLoaded ? (
                   <div className="isloaded">
-                    <h3>Movie successfully added</h3>
+                    <h3>Movie successfully added!</h3>
                   </div>
                 ) : (
                   ""

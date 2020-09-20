@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./MovieDetailsContent.css";
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -53,59 +55,53 @@ export class MoviePage extends Component {
   }
 
   handleDeleteMovie = () => {
-    
-    const logInToken = localStorage.getItem("accessToken");
-    const movieLocalID = localStorage.getItem("movieID").replace(/["']/g, "");
-    const movieDelete = `https://movies-app-siit.herokuapp.com/movies/${movieLocalID}`;
-    // console.log(movieDelete);
-    // console.log(logInToken);
-    fetch(movieDelete, {
-      method: "DELETE",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "x-auth-token": logInToken,
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-    }).then(() => {
-      this.props.history.push("/");
-      localStorage.removeItem("id");
+    confirmAlert({
+      title: 'Confirm to submit',
+      message: 'Are you sure you want to delete the movie?.',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick:() => {
+          const logInToken = localStorage.getItem("accessToken");
+          const movieLocalID = localStorage.getItem("movieID").replace(/["']/g, "");
+          const movieDelete = `https://movies-app-siit.herokuapp.com/movies/${movieLocalID}`;
+          // console.log(movieDelete);
+          // console.log(logInToken);
+          fetch(movieDelete, {
+            method: "DELETE",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+              "x-auth-token": logInToken,
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+          }).then(() => {
+            localStorage.removeItem("id");
+            window.location="/";
+          });}
+        },
+        {
+          label: 'No',
+          onClick: () => {window.location="/";
+        }
+        }
+      ]
     });
+
+    
+    
   };
 
-/*handleEditMovie = () => {
-    
-    const logInToken = localStorage.getItem("accessToken");
-    const movieLocalID = localStorage.getItem("movieID").replace(/["']/g, "");
-    const movieEdit = `https://movies-app-siit.herokuapp.com/movies/${movieLocalID}`;
-    // console.log(movieDelete);
-    // console.log(logInToken);
-    fetch(movieEdit, {
-      method: "PUT",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "x-auth-token": logInToken,
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-    }).then(() => {
-      this.props.history.push("/");
-    });
-  };
 
-*/
-  
 
 
   render() {
     const { isLoggedIn } = this.props;
 
     const { movie, isLoaded } = this.state;
-
+    console.log(movie);
     return (
       <div className="movie-page-container">
        
@@ -139,16 +135,19 @@ export class MoviePage extends Component {
                       <li className="movie-info">
                         iMDB votes: {movie.imdbVotes}
                       </li>
+                     
                     </ul>
+                    {/* <div><li className="movie-info">Description : {movie.Plot} </li></div> */}
                   </div>
                 </div>
                 {localStorage.getItem("accessToken") ? (
                   <div className="after-log-btn">
+                    <Link to={`/EditPage?id=${movie._id}`} movieState={this.state.movie}>
                     <Button className="edit-btn">
-                    {/* <EditForm movie={this.state.movie}/> */}
-                      
+                                        
                         <FontAwesomeIcon icon={faEdit} />
                     </Button>
+                    </Link>
                     <Button className="del-btn" onClick={this.handleDeleteMovie}>
                       <Link to={'/Movies'}>
                       <FontAwesomeIcon icon={faTrash} />

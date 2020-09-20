@@ -10,6 +10,8 @@ import logomobile from "../images/logo-mobile-small.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import BurgerNav from "./BurgerCall";
 
 export class Navbar extends Component {
@@ -21,7 +23,15 @@ export class Navbar extends Component {
 
 
     this.handleLogOut = () => {
-      fetch("https://movies-app-siit.herokuapp.com/auth/logout", {
+      confirmAlert({
+        title: 'Confirm to submit',
+        message: 'Are you sure you want to Log Out?',
+        buttons: [
+          {
+            label: 'Yes',
+            onClick: () => {
+
+        fetch("https://movies-app-siit.herokuapp.com/auth/logout", {
         method: "GET",
         headers: {
           "X-Auth-Token":localStorage.removeItem("accessToken"),
@@ -33,14 +43,21 @@ export class Navbar extends Component {
           console.log(json);
           const message=json.message
           this.setState({message})
+          window.location="/"
   
         });
-        return true;
-
-    };
+        return true;}
+          },
+          {
+            label: 'No',
+            onClick: () => {window.location="/"}
+          }
+        ]
+      });
 
 
   }
+}
 
   render() {
     const { isLoggedIn, username, onShowLogOutModal } = this.props;

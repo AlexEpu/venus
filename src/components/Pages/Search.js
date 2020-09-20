@@ -188,7 +188,7 @@ class Search extends Component {
       return <div>Loading.Please wait..</div>;
     } else {
       return (
-        <div class="search-page">
+        <div className="search-page">
           <div className="search-input-wrapper">
             <input
               placeholder="   Search.."
@@ -286,7 +286,7 @@ class Search extends Component {
                 ))}
             </div>
             </div>
-          ) :""}
+          ) : (<div><h3> No results found.</h3></div>) }
           
           <div></div>
         </div>

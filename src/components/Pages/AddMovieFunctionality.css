@@ -62,7 +62,7 @@ input:focus {
     cursor: pointer;
     left: 50%;
     margin-left: -59.69px;
-    margin-top: 15px;
+    margin-top: 30px;
     transition: 0.3s ease;
 
 
@@ -116,3 +116,7 @@ form input:focus {
     border-bottom: 1px solid #00ff22 !important;
     
 }
+
+
+
+.isloaded{margin-top:-6px;}
