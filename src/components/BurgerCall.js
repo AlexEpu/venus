@@ -53,7 +53,7 @@ function BurgerNav() {
             onMouseLeave={onMouseLeave}
           >
             <Link to="/movies" className="nav-links" onClick={closeMobileMenu}>
-              Movies
+              All Movies
             </Link>
           </li>
           <li className="nav-item">
@@ -63,6 +63,15 @@ function BurgerNav() {
               onClick={closeMobileMenu}
             >
               My Movies
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/movie-search"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Movie Search
             </Link>
           </li>
           <li className="nav-item"></li>
@@ -76,8 +85,6 @@ function BurgerNav() {
             </Link>
           </li>
         </ul>
-       
-       
       </nav>
     </>
   );

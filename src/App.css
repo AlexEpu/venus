@@ -3,15 +3,15 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat',
-  sans-serif;
-     
-  
-  
-  
+    sans-serif;
+
+
+
+
 }
 
 #root {
-  background:#232727;
+  background: #232727;
 
 
 }
@@ -21,7 +21,10 @@
 .mymovies,
 .myaccount,
 .join-us,
-.movie-details {
+.movie-details,
+.movie-search,
+.add-movies {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +41,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; */
-  
+
 }
 
 .movies {
@@ -51,18 +54,18 @@
   margin: 0;
   padding: 0;
   min-height: 0vh;
-   background:#232727;
+  background: #232727;
 }
 
 .movie-details {
-   /* background-image: url('./images/img-3.jpg');
+  /* background-image: url('./images/img-3.jpg');
    background-position: center;
    background-size: fill;
    background-repeat: no-repeat;
    color: #fff;
    font-size: 100px; */
-   justify-content: unset;
-   margin: 0;
+  justify-content: unset;
+  margin: 0;
   padding: 0;
   min-height: 0vh;
   background: #232727;
@@ -77,6 +80,22 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
+}
+
+.add-movies {
+  background-image: url('./images/img-5.jpg');
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.movie-search {
+  margin: 0;
+  padding: 0;
+  min-height: 0vh;
+  background: #232727;
 }
 
 .myaccount {
@@ -96,4 +115,3 @@
   color: #fff;
   font-size: 100px;
 }
-

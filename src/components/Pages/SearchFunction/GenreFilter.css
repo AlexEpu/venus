@@ -1,0 +1,7 @@
+.genreContainer{
+    width:160px;
+    border-width: 10px;
+    padding:5px;
+}
+
+.genreSelect{width: 200px;}

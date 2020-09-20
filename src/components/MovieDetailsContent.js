@@ -143,13 +143,13 @@ export class MoviePage extends Component {
                   </div>
                 </div>
                 {localStorage.getItem("accessToken") ? (
-                  <div className="willseeclass">
-                    <Button >
+                  <div className="after-log-btn">
+                    <Button className="edit-btn">
                     {/* <EditForm movie={this.state.movie}/> */}
                       
                         <FontAwesomeIcon icon={faEdit} />
                     </Button>
-                    <Button onClick={this.handleDeleteMovie}>
+                    <Button className="del-btn" onClick={this.handleDeleteMovie}>
                       <Link to={'/Movies'}>
                       <FontAwesomeIcon icon={faTrash} />
                       </Link>

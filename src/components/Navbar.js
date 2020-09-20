@@ -54,25 +54,25 @@ export class Navbar extends Component {
                 <React.Fragment>
                   <li className="AddButton">
                     <Link to="./Addmovie">
-                      <p>Add</p>
+                      <i className="fas fa-plus fa-lg"></i>
                     </Link>
                   </li>
-                  <li className="username">
+                  {/* <li className="username">
                     <FontAwesomeIcon icon={faUser} className="usernameIcon" />
                     {username}
-                  </li>
-                  <div 
-                   className="log-out-Button">
-                     <Link to="/join-us">
-                    <FontAwesomeIcon icon={faSignOutAlt} onClick={this.handleLogOut} />
-                    <h1>{this.state.message}</h1>
+                  </li> */}
+                  <div className="log-out-Button">
+                    <Link to="/join-us">
+                      <FontAwesomeIcon
+                        icon={faSignOutAlt}
+                        onClick={this.handleLogOut}
+                      />
+                      <h1>{this.state.message}</h1>
                     </Link>
                   </div>
                 </React.Fragment>
               ) : (
-                <React.Fragment>
-                 
-                </React.Fragment>
+                <React.Fragment></React.Fragment>
               )}
             </ul>
           </div>
@@ -80,7 +80,6 @@ export class Navbar extends Component {
 
           <BurgerNav />
           <SearchBarNav />
-          <i className="fas fa-plus fa-lg"></i>
           <Link to="/join-us">
             <i className="fas fa-user user-icon fa-lg"></i>
           </Link>

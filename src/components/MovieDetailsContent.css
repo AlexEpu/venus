@@ -128,3 +128,27 @@
     /* border: 5px solid black; */
     margin-bottom: 40px;
 }
+
+.after-log-btn{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-btn {
+    padding:5px 25px 5px 25px;
+    /* color: #fff; */
+    margin-left: 30px;
+    height:50px;
+}
+
+.del-btn {
+    padding: 5px 25px 5px 25px;
+    /* color: #fff; */
+    margin-left: 30px;
+    height: 50px;
+}
+
+.del-btn a{
+    color: #fff;
+}

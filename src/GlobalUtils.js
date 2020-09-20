@@ -7,6 +7,8 @@ import MyMovies from "./components/Pages/MyMovies";
 import MyAccount from "./components/Pages/MyAccount";
 import JoinUs from "./components/Pages/JoinUs";
 import MoviePage from "./components/MovieDetailsContent";
+import MovieSearch from "./components/Pages/MovieSearch";
+import AddMovie from "./components/Pages/AddMovieFunctionality";
 import Cookies from "js-cookie";
 import { Component } from "react";
 //import WelcomeBanner from "./components/WelcomeBanner";
@@ -97,8 +99,10 @@ class GlobalUtils extends Component {
         <Route path="/" exact component={Home} />
         <Route path="/movies" component={Movies} />
         <Route path="/mymovies" component={MyMovies} />
+        <Route path="/movie-search" component={MovieSearch} />
         <Route path="/myaccount" component={MyAccount} />
         <Route path="/join-us" component={JoinUs} />
+        <Route path="/Addmovie" component={AddMovie} />
         <Route
           exact
           path="/movie-details"
