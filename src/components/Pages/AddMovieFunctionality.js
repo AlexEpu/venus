@@ -56,7 +56,6 @@ class AddMovie extends Component {
       ImdbRating: "",
       imdbID: "",
       Type: "",
-      Error: "",
       isLoaded: false,
     });
   };
@@ -137,6 +136,7 @@ class AddMovie extends Component {
         .then((json) => {
           console.log(json);
           if (!this.state.Error) this.setState({ isLoaded: true });
+          this.setState({Error:""})
           console.log(this.state.isLoaded);
         });
     }
@@ -159,9 +159,7 @@ class AddMovie extends Component {
             <div id="form">
               <form onSubmit={this.submitMovie}>
                 {/* <label className="addMovieTitle">Movie Title</label> */}
-                <input
-                              type="text"
-                              className="input-class"
+                <input type="text" className="input-class"
                   value={this.state.Title}
                   placeholder="Enter Movie Title"
                   name="Title"
