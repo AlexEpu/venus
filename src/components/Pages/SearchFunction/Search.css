@@ -1,5 +1,5 @@
 .searchinput {
-    margin-top: -1800px;
+    margin-top: -1650px;
     margin-bottom: 30px;
     /* margin-left: 200px; */
     width: 50%;
@@ -83,7 +83,7 @@ input {
     flex-wrap: wrap;
     /* border: 5px solid black; */
     justify-content: center;
-    margin-top: -750px;
+    margin-top: -800px;
 }
 
 .search-input-wrapper {
@@ -170,7 +170,7 @@ input {
      flex-direction: column;
      justify-content: center;
      align-items: center;
-    margin-top:750px !important;
+    margin-top:700px !important;
 }
 
 .posters:hover {
