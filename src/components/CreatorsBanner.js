@@ -28,13 +28,13 @@ function CreatorsBanner() {
             links below.
           </p>
           <div className="socials-home">
-            <a href="https://facebook.com" target="_blank">
+            <a href="https://www.facebook.com/AdelinaCimpan96/" target="_blank">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
             <a href="https://instagram.com" target="_blank">
               <i className="fab fa-instagram fa-2x"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank">
+            <a href="https://www.linkedin.com/in/adelina-cîmpan-ba5199198" target="_blank">
               <i className="fab fa-linkedin fa-2x"></i>
             </a>
           </div>
@@ -61,13 +61,13 @@ function CreatorsBanner() {
             want to get in touch you can find me at the links below.
           </p>
           <div className="socials-home">
-            <a href="https://facebook.com" target="_blank">
+            <a href="https://www.facebook.com/barnutsergiu" target="_blank">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
             <a href="https://instagram.com" target="_blank">
               <i className="fab fa-instagram fa-2x"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank">
+            <a href="https://www.linkedin.com/in/sergiu-barnut-584403193/" target="_blank">
               <i className="fab fa-linkedin fa-2x"></i>
             </a>
           </div>
@@ -93,13 +93,13 @@ function CreatorsBanner() {
             want to get in touch you can find me at the links below.
           </p>
           <div className="socials-home">
-            <a href="https://facebook.com" target="_blank">
+            <a href="https://www.facebook.com/epuran.alex" target="_blank">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
             <a href="https://instagram.com" target="_blank">
               <i className="fab fa-instagram fa-2x"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank">
+            <a href="https://www.linkedin.com/in/epuran-alexandru-lucian-3004981a0/" target="_blank">
               <i className="fab fa-linkedin fa-2x"></i>
             </a>
           </div>
