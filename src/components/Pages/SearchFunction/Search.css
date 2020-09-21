@@ -1,5 +1,5 @@
 .searchinput {
-    margin-top: 50px;
+    margin-top: -2000px;
     margin-bottom: 30px;
     /* margin-left: 200px; */
     width: 50%;
@@ -83,6 +83,7 @@ input {
     flex-wrap: wrap;
     /* border: 5px solid black; */
     justify-content: center;
+    margin-top: -950px;
 }
 
 .search-input-wrapper {
@@ -111,6 +112,7 @@ input {
 }
 
 .button-reset {
+    
     display: flex;
     font-family: 'Montserrat',
         sans-serif !important;
@@ -118,7 +120,7 @@ input {
     justify-content: center; */
     padding: 3px;
     /* margin-top: 30px; */
-    margin-left: 80px;
+    margin-left: 25px;
     /* background-color:red; */
 }
 
@@ -149,6 +151,7 @@ input {
     display: flex;
     align-content: center;
     justify-content: center;
+    margin-top: -200px;
 }
 
 .posters {
@@ -160,6 +163,14 @@ input {
 
 
 
+}
+
+.movie-card-main-container-2{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+    margin-top: 900px !important;
 }
 
 .posters:hover {

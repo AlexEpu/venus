@@ -56,7 +56,7 @@ function BurgerNav() {
               All Movies
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
               to="/mymovies"
               className="nav-links"
@@ -64,7 +64,7 @@ function BurgerNav() {
             >
               My Movies
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link
               to="/movie-search"

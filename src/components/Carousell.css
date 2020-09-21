@@ -173,13 +173,13 @@ margin-right: 10px;
   transition: all 250ms ease;
   border: none;
  margin: 5px !important;
-  background-color: #1888ff !important;
+  background-color:#F73A4C !important;
   font-size: 0px !important;
   content: "";
   border: 0px !important;
   height:5px !important;
   width: 15px !important;
-  box-shadow: 0 0 1px 1px #1888ff !important;
+  box-shadow: 0 0 1px 1px #F73A4C !important;
   border-radius: 0px !important;
   outline: none;
 }

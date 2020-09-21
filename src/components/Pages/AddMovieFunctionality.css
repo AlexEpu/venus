@@ -11,7 +11,7 @@
     flex-direction: column;
     display: flex;
     width: 400px;
-    height: 800px;
+    height: 850px;
     align-self: center;
     border: 2px solid rgb(48, 48, 48);
     border-radius: 15px;
@@ -34,6 +34,7 @@ form {
 
 .input-class {
     transition: 0.3s ease-in-out;
+    color: #fff !important;
 }
 
 form input {
@@ -54,14 +55,14 @@ input:focus {
     outline: none;
     border-radius: 5px;
     position: absolute;
-    padding: 10px;
+    padding: 10px 127px;
     color: rgb(255, 255, 255);
     font-size: 17px;
     font-weight: 600;
     background-color: #F73A4C;
     cursor: pointer;
     left: 50%;
-    margin-left: -59.69px;
+    margin-left: -173px;
     margin-top: 30px;
     transition: 0.3s ease;
 
@@ -69,19 +70,14 @@ input:focus {
 }
 
 .add-movie-btn:hover {
-    border: none;
-    outline: none;
+    
     border-radius: 5px;
-    position: absolute;
-    padding: 10px;
+   
     color: rgb(0, 255, 0);
     font-size: 17px;
     font-weight: 600;
     background-color: #F73A4C;
     cursor: pointer;
-    left: 50%;
-    margin-left: -59.69px;
-    margin-top: 15px;
     border: 2px solid rgb(0, 255, 0);
     background: transparent;
 
@@ -119,4 +115,23 @@ form input:focus {
 
 
 
-.isloaded{margin-top:-6px;}
+.isloaded{
+    color: #fff;
+    margin-top:-6px;
+}
+
+.btn-secondary {
+    position: absolute;
+padding: 10px 127px !important;
+font-size: 20px;
+transform: translate(-50%, -50%);
+margin-top: 50px;
+}
+
+.text-center h3{
+color: #fff;
+}
+
+.form-control{
+    color: #fff !important;
+}

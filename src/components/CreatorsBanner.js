@@ -8,7 +8,7 @@ function CreatorsBanner() {
         <div className="picture-left-container">
           <img
             className="picture-left"
-            src={require("../images/alex.jpg")}
+            src={require("../images/ade.jpg")}
             alt="photo"
           ></img>
           <div className="short-desc">
@@ -20,10 +20,12 @@ function CreatorsBanner() {
 
           <h1 className="picture-left-text">Adelina</h1>
           <p className="picture-left-paragraph">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book......
+            Hello! My name is Adelina and at the moment I'm a rookie in front
+            end development. I'm a friendly, team-working person eager to learn
+            more and gain eperience in the industry. I'm looking forward in
+            expanding my knowledge and building more interactive web
+            applications. If you want to get in touch you can find me at the
+            links below.
           </p>
           <div className="socials-home">
             <a href="https://facebook.com" target="_blank">
@@ -40,7 +42,7 @@ function CreatorsBanner() {
         <div className="picture-middle-container">
           <img
             className="picture-middle"
-            src={require("../images/alex.jpg")}
+            src={require("../images/sergiu.jpg")}
             alt="photo"
           ></img>
           <div className="short-desc">
@@ -52,10 +54,11 @@ function CreatorsBanner() {
 
           <h1 className="picture-middle-text">Sergiu</h1>
           <p className="picture-middle-paragraph">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book......
+            Hello! My name is Sergiu and at the moment I'm a rookie in front end
+            development. I'm a friendly, team-working person eager to learn more
+            and gain eperience in the industry. I'm looking forward in expanding
+            my knowledge and building more interactive web applications. If you
+            want to get in touch you can find me at the links below.
           </p>
           <div className="socials-home">
             <a href="https://facebook.com" target="_blank">
@@ -83,10 +86,11 @@ function CreatorsBanner() {
           </div>
           <h1 className="picture-right-text">Alex</h1>
           <p className="picture-right-paragraph">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book......
+            Hello! My name is Alex and at the moment I'm a rookie in front end
+            development. I'm a friendly, team-working person eager to learn more
+            and gain eperience in the industry. I'm looking forward in expanding
+            my knowledge and building more interactive web applications. If you
+            want to get in touch you can find me at the links below.
           </p>
           <div className="socials-home">
             <a href="https://facebook.com" target="_blank">

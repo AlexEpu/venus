@@ -15,6 +15,7 @@ import Type from "./SearchFunction/TypeFilter";
 import NoResult from "./SearchFunction/NoResult";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import CarouselLoader from "../CarouselLoader"
 
 class Search extends Component {
   constructor(props) {
@@ -185,7 +186,11 @@ class Search extends Component {
     const { isLoaded } = this.state;
 
     if (!isLoaded) {
-      return <div>Loading.Please wait..</div>;
+      return (
+        <div className="loader">
+          <CarouselLoader />
+        </div>
+      );
     } else {
       return (
         <div className="search-page">
@@ -251,7 +256,7 @@ class Search extends Component {
           </div>
 
           {this.state.movies ? (
-            <div className={"movie-card-main-container"}>
+            <div className={"movie-card-main-container-2"}>
             <div className="movie-card-container">
               {this.state.movies
                 .filter((image) => image.Poster && image.Poster !== "N/A")

@@ -113,88 +113,150 @@ class EditPage extends Component{
 
    render(){
 
-       return(
-           <div >
-               <form >
-        <div className="form-group">
-          <label>Title</label>
-          <input className="form-control" type="Text" name="Title" value={this.state.Title} onChange={(e) => {
-            this.setState({Title: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>Year</label>
-          <input className="form-control" type="Number" name="Year" value={this.state.Year} onChange={(e) => {
-            this.setState({Year: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>Genre</label>
-          <input className="form-control" value={this.state.Genre} name="Genre" onChange={(e) => {
-            this.setState({Genre: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>Language</label>
-          <input className="form-control" name="Language" value={this.state.Language} onChange={(e) => {
-            this.setState({Language: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>Runtime</label>
-          <input className="form-control" name="Runtime" value={this.state.Runtime} onChange={(e) => {
-            this.setState({Runtime: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>Country</label>
-          <input className="form-control" name="Country" value={this.state.Country} onChange={(e) => {
-            this.setState({Country: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>Poster</label>
-          <input className="form-control" name="Poster" value={this.state.Poster} onChange={(e) => {
-            this.setState({Poster: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>imdbID</label>
-          <input className="form-control" name="imdbID" value={this.state.imdbID} onChange={(e) => {
-            this.setState({imdbID: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>ImdbVotes</label>
-          <input className="form-control" name="ImdbVotes"value={this.state.ImdbVotes} onChange={(e) => {
-            this.setState({ImdbVotes: e.target.value})
-          }}/>
-        </div>
-        <div className="form-group">
-          <label>ImdbRating</label>
-          <input className="form-control" name="ImdbRating" value={this.state.ImdbRating} onChange={(e) => {
-            this.setState({ImdbRating: e.target.value})
-          }}/>
-        </div>
-        <div className="text-center">
-          <button className="btn btn-secondary mr-5" type="button" onClick={() => this.saveMovie()}>Save</button>
-        </div>
-        {this.state.isLoaded ? (
-                  <div className="isloaded">
-                    <h3>Movie successfully edited!</h3>
-                  </div>
-                ) : (
-                  ""
-                )}
-      </form>
-           </div>
-
-
-
-
-
-
-       )
+       return (
+         <div className="form-container">
+           <form className="AddForm">
+             <div className="input-class">
+               {/* <label>Title</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter Movie Title"
+                 type="Text"
+                 name="Title"
+                 value={this.state.Title}
+                 onChange={(e) => {
+                   this.setState({ Title: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>Year</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter Movie Year"
+                 type="Number"
+                 name="Year"
+                 value={this.state.Year}
+                 onChange={(e) => {
+                   this.setState({ Year: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>Genre</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter Genre"
+                 value={this.state.Genre}
+                 name="Genre"
+                 onChange={(e) => {
+                   this.setState({ Genre: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>Language</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter Language"
+                 name="Language"
+                 value={this.state.Language}
+                 onChange={(e) => {
+                   this.setState({ Language: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>Runtime</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter Runtime"
+                 name="Runtime"
+                 value={this.state.Runtime}
+                 onChange={(e) => {
+                   this.setState({ Runtime: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>Country</label> */}
+               <input
+                 className="input-class"
+                 placeholder="Enter Country"
+                 name="Country"
+                 value={this.state.Country}
+                 onChange={(e) => {
+                   this.setState({ Country: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>Poster</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter Poster Link"
+                 name="Poster"
+                 value={this.state.Poster}
+                 onChange={(e) => {
+                   this.setState({ Poster: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>imdbID</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter iMDB ID"
+                 name="imdbID"
+                 value={this.state.imdbID}
+                 onChange={(e) => {
+                   this.setState({ imdbID: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>ImdbVotes</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter iMDB Votes"
+                 name="ImdbVotes"
+                 value={this.state.ImdbVotes}
+                 onChange={(e) => {
+                   this.setState({ ImdbVotes: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>ImdbRating</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Enter iMDB Rating"
+                 name="ImdbRating"
+                 value={this.state.ImdbRating}
+                 onChange={(e) => {
+                   this.setState({ ImdbRating: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="text-center">
+               <button
+                 className="btn btn-secondary mr-5"
+                 type="button"
+                 onClick={() => this.saveMovie()}
+               >
+                 Save
+               </button>
+             </div>
+             {this.state.isLoaded ? (
+               <div className="isloaded">
+                 <h3>Movie successfully edited!</h3>
+               </div>
+             ) : (
+               ""
+             )}
+           </form>
+         </div>
+       );
    }
 
 }

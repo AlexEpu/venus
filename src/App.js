@@ -18,10 +18,10 @@ function App() {
       <Switch>
         {/* <Route path="/" exact component={Home} /> */}
         {/* <Route path="/movies" component={Movies} /> */}
-        <Route path="/mymovies" component={MyMovies} />
+        {/* <Route path="/mymovies" component={MyMovies} /> */}
         {/* <Route path="/movie-search" component={MovieSearch} /> */}
-        <Route path="/myaccount" component={MyAccount} />
-        <Route path="/join-us" component={JoinUs} />
+        {/* <Route path="/myaccount" component={MyAccount} /> */}
+        {/* <Route path="/join-us" component={JoinUs} /> */}
         {/* <Route path="/Addmovie" component={AddMovie} /> */}
       </Switch>
       <GlobalUtils />

@@ -115,7 +115,7 @@ export class Login extends React.Component {
           </div>
           <div className="form" onSubmit={this.handleSubmit}>
             <div  className="form-group">
-              <label htmlFor="username">Username</label>
+              {/* <label htmlFor="username">Username</label> */}
               <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
               <div className="valid">
             {this.state.usernameError}
@@ -123,7 +123,7 @@ export class Login extends React.Component {
               </div>            
             </div>
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              {/* <label htmlFor="password">Password</label> */}
               <input type="password" name="password" placeholder="password"  onChange={this.handleChange}/>
               <div  className="valid">
             {this.state.passwordError}

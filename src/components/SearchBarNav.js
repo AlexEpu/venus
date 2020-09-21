@@ -85,7 +85,7 @@ class SearchBarNav extends Component {
       <form className="menu__search-form">
         <input className="menu__search-input"  value={this.state.input} placeholder="quick search...." updateValue={this.handleSearch} searchFilter={this.handleOnSearchChange} onChange={this.handleOnChange} />
       </form>
-      <div> 
+      <div className="quick-search-box-container"> 
     {this.state.input? this.state.movies.map((item,index)=>(<div className="list"> <Link to={`/movie-details?id=${item._id}`}><p>{item.Title}</p></Link> </div>)) :""}
       </div>
       </div>

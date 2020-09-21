@@ -104,60 +104,71 @@ export class MoviePage extends Component {
     console.log(movie);
     return (
       <div className="movie-page-container">
-       
         {isLoggedIn ? (
           <h1></h1>
         ) : (
-          <React.Fragment key={movie} >
+          <React.Fragment key={movie}>
             <div className="movie-poster-details-container">
               <div className="movie-poster">
                 <img className="poster" src={movie.Poster} alt="" />
               </div>
-              <div className="movie-details">
-                <div className="movie-title-container">
+              <div className="movie-title-up-container">
+                <div className="movie-title-up">
                   <h2 className="movie-name">{movie.Title}</h2>
                 </div>
-                <div className="movie-genre-container">
-                  <li className="movie-info">{movie.Genre}</li>
-                </div>
-                <div className="movie-det-container">
-                  <div className="movie-year-runtime-lang-container">
-                    <li className="movie-info">Year: {movie.Year}</li>
-                    <li className="movie-info">Runtime: {movie.Runtime}</li>
-                    <li className="movie-info">Language: {movie.Language}</li>
+              </div>
+              <div className="movie-details-container">
+                <div className="movie-details">
+                  {/* <div className="movie-title-container">
+                  <h2 className="movie-name">{movie.Title}</h2>
+                </div> */}
+                  <div className="movie-genre-container">
+                    <li className="movie-info">{movie.Genre}</li>
                   </div>
-                  <div className="movie-country-rating-votes-container">
-                    <ul>
-                      <li className="movie-info">Country: {movie.Country}</li>
-                      <li className="movie-info">
-                        iMDB rating: {movie.imdbRating}
-                      </li>
-                      <li className="movie-info">
-                        iMDB votes: {movie.imdbVotes}
-                      </li>
-                     
-                    </ul>
-                    {/* <div><li className="movie-info">Description : {movie.Plot} </li></div> */}
+                  <div className="movie-det-container">
+                    <div className="movie-year-runtime-lang-container">
+                      <li className="movie-info">Year: {movie.Year}</li>
+                      <li className="movie-info">Runtime: {movie.Runtime}</li>
+                      <li className="movie-info">Language: {movie.Language}</li>
+                    </div>
+                    <div className="movie-country-rating-votes-container">
+                      <ul>
+                        <li className="movie-info">Country: {movie.Country}</li>
+                        <li className="movie-info">
+                          iMDB rating: {movie.imdbRating}
+                        </li>
+                        <li className="movie-info">
+                          iMDB votes: {movie.imdbVotes}
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                {localStorage.getItem("accessToken") ? (
-                  <div className="after-log-btn">
-                    <Link to={`/EditPage?id=${movie._id}`} movieState={this.state.movie}>
-                    <Button className="edit-btn">
-                                        
-                        <FontAwesomeIcon icon={faEdit} />
-                    </Button>
-                    </Link>
-                    <Button className="del-btn" onClick={this.handleDeleteMovie}>
-                      <Link to={'/Movies'}>
-                      <FontAwesomeIcon icon={faTrash} />
+                  <div className="movie-plot-container">
+                    <li className="movie-info">Plot : {movie.Plot} </li>
+                  </div>
+                  {localStorage.getItem("accessToken") ? (
+                    <div className="after-log-btn">
+                      <Link
+                        to={`/EditPage?id=${movie._id}`}
+                        movieState={this.state.movie}
+                      >
+                        <Button className="edit-btn">
+                          <FontAwesomeIcon icon={faEdit} />
+                        </Button>
                       </Link>
-                    </Button>
-                    
-                  </div>
-                ) : (
-                  ""
-                )}
+                      <Button
+                        className="del-btn"
+                        onClick={this.handleDeleteMovie}
+                      >
+                        <Link to={"/Movies"}>
+                          <FontAwesomeIcon icon={faTrash} />
+                        </Link>
+                      </Button>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
               </div>
             </div>
           </React.Fragment>

@@ -29,6 +29,7 @@
   align-items: center;
   justify-content: center;
   min-height: 120vh;
+  /* background: #232727 !important; */
   /* font-size: 3rem; */
 }
 
@@ -51,10 +52,10 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px; */
-  margin: 0;
+  /* margin: 0;
   padding: 0;
   min-height: 0vh;
-  background: #232727;
+  background: #232727; */
 }
 
 .movie-details {
@@ -92,10 +93,10 @@
 }
 
 .movie-search {
-  margin: 0;
+  /* margin: 0;
   padding: 0;
   min-height: 0vh;
-  background: #232727;
+  background: #232727 !important; */
 }
 
 .myaccount {
