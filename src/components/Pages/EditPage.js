@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import  "./EditPage.css"
 
 class EditPage extends Component{   
     constructor(props){
@@ -116,6 +116,7 @@ class EditPage extends Component{
        return (
          <div className="form-container">
            <form className="AddForm">
+             <h3 className="editFormTitle">Edit Movie</h3>
              <div className="input-class">
                {/* <label>Title</label> */}
                <input

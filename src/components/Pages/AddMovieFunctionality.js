@@ -158,6 +158,7 @@ class AddMovie extends Component {
           <div className="AddForm">
             <div id="form">
               <form onSubmit={this.submitMovie}>
+                <h3 className="addMovieTitle">Add Movie</h3>
                 {/* <label className="addMovieTitle">Movie Title</label> */}
                 <input type="text" className="input-class"
                   value={this.state.Title}
