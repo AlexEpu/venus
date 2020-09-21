@@ -172,6 +172,7 @@ class AddMovie extends Component {
                 {/* <label className="addYear">Year</label> */}
                 <input
                   value={this.state.Year}
+                  className="input-class"
                   type="number"
                   placeholder="Enter a Year"
                   name="Year"
@@ -184,6 +185,7 @@ class AddMovie extends Component {
                 <input
                   value={this.state.Country}
                   type="text"
+                  className="input-class"
                   placeholder="Enter a Country"
                   name="Country"
                   onChange={this.changeSubmissions}
@@ -195,6 +197,7 @@ class AddMovie extends Component {
                 <input
                   value={this.state.Genre}
                   type="text"
+                  className="input-class"
                   placeholder="Enter a Genre"
                   name="Genre"
                   onChange={this.changeSubmissions}
@@ -206,6 +209,7 @@ class AddMovie extends Component {
                 <input
                   value={this.state.Language}
                   type="text"
+                  className="input-class"
                   placeholder="Enter Language"
                   name="Language"
                   onChange={this.changeSubmissions}
@@ -217,17 +221,16 @@ class AddMovie extends Component {
                 <input
                   value={this.state.Runtime}
                   type="text"
+                  className="input-class"
                   placeholder="Enter Movie Runtime"
                   name="Runtime"
                   onChange={this.changeSubmissions}
                 ></input>
-                <div>
-                  <h6 className="validateInput">{this.state.Error} </h6>
-                </div>
                 {/* <label className="addImdbVotes">IMDB votes</label> */}
                 <input
                   value={this.state.ImdbVotes}
                   type="number"
+                  className="input-class"
                   placeholder="Enter IMDB vote"
                   name="ImdbVotes"
                   onChange={this.changeSubmissions}
@@ -239,6 +242,7 @@ class AddMovie extends Component {
                 <input
                   value={this.state.ImdbRating}
                   type="number"
+                  className="input-class"
                   placeholder="Enter IMDB rating"
                   name="ImdbRating"
                   onChange={this.changeSubmissions}
@@ -250,6 +254,7 @@ class AddMovie extends Component {
                 <input
                   value={this.state.imdbID}
                   type="text"
+                  className="input-class"
                   placeholder="Enter IMDB ID"
                   name="imdbID"
                   onChange={this.changeSubmissions}
@@ -261,6 +266,7 @@ class AddMovie extends Component {
                 <input
                   value={this.state.Poster}
                   type="text"
+                  className="input-class"
                   placeholder="Enter Poster URL"
                   name="Poster"
                   onChange={this.changeSubmissions}
@@ -276,6 +282,7 @@ class AddMovie extends Component {
                   value={this.state.Type}
                   placeholder="Enter Type"
                   name="Type"
+                  className="input-class"
                   onChange={this.changeSubmissions}
                 ></input>
                 <div className="addMovieButton">
