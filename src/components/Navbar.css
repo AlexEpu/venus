@@ -275,7 +275,7 @@ transition: all 0.4s ease-in-out;
 .log-out-Button a{
     position: absolute;
     right: 0;
-    color: #fff;
+    color: #00fd00;
     font-size: 24px;
     transform: translate(-50%, -50%);
     transition: 0.4s ease;
