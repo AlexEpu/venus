@@ -161,7 +161,7 @@ transition: all 0.3s ease;
  /* height: 500px !important; */
  margin-left: -553px;
  /* border: 1px solid rgb(41, 41, 41); */
- z-index: 2;
+ z-index: 100;
  min-height: 300px;
 }
 
