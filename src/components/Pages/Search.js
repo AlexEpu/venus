@@ -207,7 +207,22 @@ class Search extends Component {
           </div>
           <div className="search-container-wrapper">
             <div className="search-container">
-              <div className="dropdown">
+                <div className="enterboxes ">
+                  <RuntimeFilter
+                    handleRuntime={this.handleRuntime}
+                    runtimeValue={this.state.runtimeValue}
+                    handleRuntimeChange={this.handleRuntimeChange}
+                  />
+                  <ImdbRatingF
+                    ratingChange={this.ratingChange}
+                    imdbRatingValue={this.state.imdbRatingValue}
+                    ratingValue={this.ratingValue}
+                  />
+                  <Year
+                    handleYearChange={this.handleYearChange}
+                    Year={this.state.Year}
+                  />
+                   <div className="dropdown">
                 <Country
                   handleCountryChange={this.handleCountryChange}
                   Country={this.state.Country}
@@ -224,21 +239,6 @@ class Search extends Component {
                   handleLanguageChange={this.handleLanguageChange}
                   Language={this.state.Language}
                 />
-                <div className="enterboxes">
-                  <RuntimeFilter
-                    handleRuntime={this.handleRuntime}
-                    runtimeValue={this.state.runtimeValue}
-                    handleRuntimeChange={this.handleRuntimeChange}
-                  />
-                  <ImdbRatingF
-                    ratingChange={this.ratingChange}
-                    imdbRatingValue={this.state.imdbRatingValue}
-                    ratingValue={this.ratingValue}
-                  />
-                  <Year
-                    handleYearChange={this.handleYearChange}
-                    Year={this.state.Year}
-                  />
                   <div className="button-reset">
                     <Button className="btn"
                       variant="contained"

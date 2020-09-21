@@ -54,6 +54,9 @@ input {
     border-radius: 10px;
     flex-wrap: wrap;
     /* padding: 5px; */
+    background-image: url(../../../images/backimg1.png);
+    border-radius: 10px;
+    border: 2px solid rgb(47, 47, 47);
     margin: 0px;
     justify-content: center;
     align-items: center;
@@ -66,16 +69,15 @@ input {
     background-size: cover;
     flex-wrap: wrap;
     display: flex;
-    border-radius: 10px;
     width: 100%;
     padding: 5px;
     margin: 5px;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(47, 47, 47);
     /* 
      */
 }
+
 
 .search-container-wrapper {
     display: flex;
