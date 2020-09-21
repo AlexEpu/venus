@@ -215,7 +215,7 @@ class AddMovie extends Component {
                 {/* <label className="addRuntime">Runtime</label> */}
                 <input
                   value={this.state.Runtime}
-                  type="number"
+                  type="text"
                   placeholder="Enter Movie Runtime"
                   name="Runtime"
                   onChange={this.changeSubmissions}

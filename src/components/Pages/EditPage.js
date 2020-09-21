@@ -49,9 +49,9 @@ class EditPage extends Component{
             });
             console.log(this.state.movie)
             this.setState({id:this.state.movie_id});
-             this.setState({Title: this.state.movie.Title});
-             this.setState({Year: this.state.movie.Year});
-             this.setState({Genre: this.state.movie.Genre});
+            this.setState({Title: this.state.movie.Title});
+            this.setState({Year: this.state.movie.Year});
+            this.setState({Genre: this.state.movie.Genre});
             this.setState({Language:this.state.movie.Language});
             this.setState({Runtime: this.state.movie.Runtime});
             this.setState({Country:this.state.movie.Country});
@@ -120,7 +120,7 @@ class EditPage extends Component{
                {/* <label>Title</label> */}
                <input
                  className="form-control"
-                 placeholder="Enter Movie Title"
+                 placeholder={this.state.movie.Title}
                  type="Text"
                  name="Title"
                  value={this.state.Title}
@@ -133,7 +133,7 @@ class EditPage extends Component{
                {/* <label>Year</label> */}
                <input
                  className="form-control"
-                 placeholder="Enter Movie Year"
+                 placeholder={this.state.movie.Year}
                  type="Number"
                  name="Year"
                  value={this.state.Year}
@@ -146,7 +146,7 @@ class EditPage extends Component{
                {/* <label>Genre</label> */}
                <input
                  className="form-control"
-                 placeholder="Enter Genre"
+                 placeholder={this.state.movie.Genre}
                  value={this.state.Genre}
                  name="Genre"
                  onChange={(e) => {
@@ -158,7 +158,7 @@ class EditPage extends Component{
                {/* <label>Language</label> */}
                <input
                  className="form-control"
-                 placeholder="Enter Language"
+                 placeholder={this.state.movie.Language}
                  name="Language"
                  value={this.state.Language}
                  onChange={(e) => {
@@ -170,8 +170,9 @@ class EditPage extends Component{
                {/* <label>Runtime</label> */}
                <input
                  className="form-control"
-                 placeholder="Enter Runtime"
+                 placeholder={this.state.movie.Runtime}
                  name="Runtime"
+                 type="text"
                  value={this.state.Runtime}
                  onChange={(e) => {
                    this.setState({ Runtime: e.target.value });
@@ -182,7 +183,7 @@ class EditPage extends Component{
                {/* <label>Country</label> */}
                <input
                  className="input-class"
-                 placeholder="Enter Country"
+                 placeholder={this.state.movie.Country}
                  name="Country"
                  value={this.state.Country}
                  onChange={(e) => {
