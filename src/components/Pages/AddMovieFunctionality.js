@@ -221,6 +221,9 @@ class AddMovie extends Component {
                   name="Runtime"
                   onChange={this.changeSubmissions}
                 ></input>
+                <div>
+                  <h6 className="validateInput">{this.state.Error} </h6>
+                </div>
                 {/* <label className="addImdbVotes">IMDB votes</label> */}
                 <input
                   value={this.state.ImdbVotes}
