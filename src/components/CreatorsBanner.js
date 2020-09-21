@@ -31,8 +31,8 @@ function CreatorsBanner() {
             <a href="https://www.facebook.com/AdelinaCimpan96/" target="_blank">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="https://instagram.com" target="_blank">
-              <i className="fab fa-instagram fa-2x"></i>
+            <a href="https://github.com/AdelineC96" target="_blank">
+              <i className="fab fa-github fa-2x"></i>
             </a>
             <a href="https://www.linkedin.com/in/adelina-cîmpan-ba5199198" target="_blank">
               <i className="fab fa-linkedin fa-2x"></i>
@@ -64,8 +64,8 @@ function CreatorsBanner() {
             <a href="https://www.facebook.com/barnutsergiu" target="_blank">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="https://instagram.com" target="_blank">
-              <i className="fab fa-instagram fa-2x"></i>
+            <a href="https://github.com/barnutsergiu" target="_blank">
+                <i className="fab fa-github fa-2x"></i>
             </a>
             <a href="https://www.linkedin.com/in/sergiu-barnut-584403193/" target="_blank">
               <i className="fab fa-linkedin fa-2x"></i>
@@ -96,8 +96,8 @@ function CreatorsBanner() {
             <a href="https://www.facebook.com/epuran.alex" target="_blank">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="https://instagram.com" target="_blank">
-              <i className="fab fa-instagram fa-2x"></i>
+            <a href="https://github.com/AlexEpu" target="_blank">
+                <i className="fab fa-github fa-2x"></i>
             </a>
             <a href="https://www.linkedin.com/in/epuran-alexandru-lucian-3004981a0/" target="_blank">
               <i className="fab fa-linkedin fa-2x"></i>
