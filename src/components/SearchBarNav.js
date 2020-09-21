@@ -52,13 +52,7 @@ class SearchBarNav extends Component {
     this.choicesUpdated("Title", inputValue);
   };
   
-  handleInputChange=(event)=>{ 
-    this.setState({
-    input: event.target.value});
-    console.log(event.target.value)
   
-  }
-
   handleSearch = (inputValue) => {
     this.setState({
       input: inputValue,
@@ -77,6 +71,7 @@ class SearchBarNav extends Component {
     this.setState({
       showForm: !this.state.showForm,
     });
+
   }
 
   render() {
@@ -86,7 +81,11 @@ class SearchBarNav extends Component {
         <input className="menu__search-input"  value={this.state.input} placeholder="quick search...." updateValue={this.handleSearch} searchFilter={this.handleOnSearchChange} onChange={this.handleOnChange} />
       </form>
       <div className="quick-search-box-container"> 
-    {this.state.input? this.state.movies.map((item,index)=>(<div className="list"> <Link to={`/movie-details?id=${item._id}`}><p>{item.Title}</p></Link> </div>)) :""}
+        {this.state.input? this.state.movies.map((item,index)=>(<div className="list">
+        <Link to={`/movie-details?id=${item._id}`} onClick={() => window.location=`/movie-details?id=${item._id}`} >
+        <p>{item.Title}</p>
+          </Link> 
+      </div>)) :""}
       </div>
       </div>
     ) : (
