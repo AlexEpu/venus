@@ -1,5 +1,5 @@
 .searchinput {
-    margin-top: -1580px;
+    margin-top: -1550px;
     margin-bottom: 30px;
     /* margin-left: 200px; */
     width: 50%;
@@ -85,7 +85,7 @@ input {
     flex-wrap: wrap;
     /* border: 5px solid black; */
     justify-content: center;
-    margin-top: -760px;
+    margin-top: -730px;
     align-content: center;
 }
 
