@@ -312,12 +312,13 @@ transition: all 0.4s ease-in-out;
         font-size: 1.2rem;
 
     }
+
     .fa-search,
-    .fa-plus,
     .fa-user {
         display: none;
         ;
     }
+
     .logo-mobile-small img {
         position: absolute;
         /* top: 50%;
@@ -329,14 +330,10 @@ transition: all 0.4s ease-in-out;
         display: block;
     }
 
-.logo-mobile-small {
-    
-   
-    
-}
+    .logo-mobile-small {}
 
     .navbar-logo img {
-        display: none;
+        display: none !important;
     }
 
     .fa-caret-down {
@@ -355,18 +352,18 @@ transition: all 0.4s ease-in-out;
         position: absolute;
         top: 80px;
         left: -100%;
-        margin-left: 0;
         opacity: 1;
         transition: all 0.5s ease;
     }
 
     .nav-menu.active {
         background: #242222;
-        left:0px;
+        left: 0px;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: 2;
-        margin-left:1px !important;
+        z-index: 1;
+        margin-left: 0px !important;
+        height: 300px;
     }
 
     .nav-links {
@@ -374,11 +371,10 @@ transition: all 0.4s ease-in-out;
         padding: 2rem;
         width: 100%;
         display: table;
-        transition: 0.5s ease;
     }
 
     .nav-links:hover {
-        background-color: #F73A4C;
+        background-color: #1888ff;
         border-radius: 0;
     }
 
@@ -411,22 +407,21 @@ transition: all 0.4s ease-in-out;
         margin: 2rem auto;
         border-radius: 4px;
         width: 80%;
-        background: #F73A4C;
+        background: #1888ff;
         text-decoration: none;
         color: #fff;
         font-size: 1.5rem;
     }
 
     .nav-links-mobile:hover {
-        background-color: transparent;
-        color: #18ff2b;
-        border: 1px solid #18ff2b;
+        background: #fff;
+        color: #1888ff;
         transition: 250ms;
     }
 
-    button {
+    /* button {
         display: none;
-    }
+    } */
 }
 
 

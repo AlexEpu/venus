@@ -23,7 +23,7 @@
 }
 
 .poster{
-height: 700px;
+height: 600px;
 }
 
 .movie-poster-details-container img {
@@ -46,7 +46,7 @@ height: 700px;
 
 .movie-details {
     /* margin-top: 150px; */
-    /* border-top-right-radius: 10px; */
+    border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background-image: url(../images/backimg1.png);
     background-size: cover;
@@ -59,14 +59,15 @@ height: 700px;
     /* border: 5px solid black; */
     /* flex-basis: 60%;
     padding-left: 150px; */
-    margin-left: 2px;
+    /* margin-left: 2px; */
 }
 
 .movie-plot-container{
     width: 100%;
     padding-left: 30px;
-    margin-top: 80px;
+    margin-top: 50px;
     color:#F73A4C;
+    font-size: 0.9em;
 }
 .movie-title-container {
     flex-wrap: wrap;
@@ -93,7 +94,7 @@ height: 700px;
     color: #F73A4C;
     padding-left: 30px;
     flex-wrap: wrap;
-    margin-top: 120px;
+    margin-top: 60px;
     font-size: 1.4em;
 }
 
