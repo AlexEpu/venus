@@ -113,11 +113,6 @@ export class MoviePage extends Component {
                 <img className="poster" src={movie.Poster} alt="" />
               </div>
               
-                {/* <div className="movie-title-up">
-                  <h2 className="movie-name">{movie.Title}</h2>
-                </div> */}
-              </div>
-              {/* <div className="movie-details-container"> */}
                 <div className="movie-details">
                   <div className="movie-title-container">
                   <h2 className="movie-name">{movie.Title}</h2>
@@ -169,8 +164,7 @@ export class MoviePage extends Component {
                     ""
                   )}
                 </div>
-              {/* </div> */}
-            {/* </div> */}
+              </div>
           </React.Fragment>
         )}
       </div>
