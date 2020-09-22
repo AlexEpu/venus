@@ -367,6 +367,14 @@ margin-right: 10px;
 
     transition: all 0.5s ease-in-out;
   }
+
+  .rec-item-wrapper {
+    display: flex;
+    align-items: center;
+    width: 300px !important;
+    height: 400px !important;
+
+  }
 }
 
 @media screen and (max-height: 600px) {}
