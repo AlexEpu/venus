@@ -3,7 +3,7 @@
     align-items: center;
     /* margin-top: 30px; */
     align-self: center;
-    font-size: 1.1em !important;
+    font-size: 1.4em !important;
     font-weight: bold;
     display: flex;
     padding-left: 0;
@@ -26,7 +26,7 @@
         background-color: #1f2323;
         border: 1px solid #272c2c;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 20px;
         
 }
 
@@ -40,4 +40,44 @@
 .page-item.active .page-link {
     background-color:#F73A4C;
     border-color:#F73A4C;
+}
+
+@media screen and (max-width: 535px) {
+    .page-link {
+        color: #F73A4C;
+        background-color: #5e5e5e;
+        border: 1px solid #5e5e5e;
+        margin-top: 10px;
+        position: relative;
+        display: block;
+        padding: .10rem .55rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #fff;
+        background-color: #1f2323;
+        border: 1px solid #272c2c;
+        text-decoration: none;
+        font-size: 16px;
+
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .page-link {
+        color: #F73A4C;
+        background-color: #5e5e5e;
+        border: 1px solid #5e5e5e;
+        margin-top: 10px;
+        position: relative;
+        display: block;
+        padding: .05rem .40rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #fff;
+        background-color: #1f2323;
+        border: 1px solid #272c2c;
+        text-decoration: none;
+        font-size: 13px;
+
+    }
 }

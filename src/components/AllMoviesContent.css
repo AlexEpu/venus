@@ -108,3 +108,56 @@ font-size: 12px;
 text-align: center;
 }
 
+@media screen and (max-width: 360px) {
+  .card-img-top {
+      height: 400px !important;
+      width: 300px;
+      border-top-left-radius: 10px !important;
+      border-top-right-radius: 10px !important;
+      border: none !important;
+      outline: none !important;
+      background-image: url(../images/backimg1.png);
+      background-size: cover;
+
+  }
+  .card-body {
+      border-bottom-left-radius: 10px !important;
+      border-bottom-right-radius: 10px !important;
+      background-image: url(../images/backimg1.png);
+      background-size: cover;
+      min-height: 120px;
+      max-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+  }
+}
+@media screen and (max-width: 300px) {
+    .card-img-top {
+        height: 350px !important;
+        width: 250px;
+        border-top-left-radius: 10px !important;
+        border-top-right-radius: 10px !important;
+        border: none !important;
+        outline: none !important;
+        background-image: url(../images/backimg1.png);
+        background-size: cover;
+
+    }
+
+    .card-body {
+        border-bottom-left-radius: 10px !important;
+        border-bottom-right-radius: 10px !important;
+        background-image: url(../images/backimg1.png);
+        background-size: cover;
+        min-height: 120px;
+        max-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+    }
+}

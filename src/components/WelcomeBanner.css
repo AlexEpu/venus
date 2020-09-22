@@ -70,3 +70,98 @@
     font-family: 'Roboto',
     sans-serif;
 }
+@media screen and (max-width: 980px) {
+    .banner-main {
+        display: flex !important;
+        justify-content: center !important;
+        align-content: center !important;
+        min-height: 200px !important;
+        /* background-color: rgba(0, 0, 0, 0.109); */
+        /* background-color: #0024f369; */
+        background-image: url(/static/media/backimg1.d2dbcf87.png);
+        width: 60%;
+        left: 50%;
+        /* margin-left: -30%; */
+        /* border: 1px solid rgba(255, 255, 255, 0.089); */
+        border: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: all 0.5s ease-in;
+    }
+
+    .banner-h1 {
+        opacity: 1 !important;
+        font-family: 'Montserrat', sans-serif;
+        margin-left: 15px;
+        margin-top: 10px;
+        font-size: 23px;
+        color: #ffffff;
+
+    }
+
+    .banner-container {
+        justify-content: center !important;
+        align-items: center !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .banner-paragraph {
+        opacity: 1;
+        font-family: 'Montserrat', sans-serif;
+        margin-left: 15px;
+        margin-top: 10px;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+.banner-main {
+    display: flex !important;
+    justify-content: center !important;
+    align-content: center !important;
+    min-height: 200px !important;
+    /* background-color: rgba(0, 0, 0, 0.109); */
+    /* background-color: #0024f369; */
+    background-image: url(/static/media/backimg1.d2dbcf87.png);
+    width: 60%;
+    left: 50%;
+    /* margin-left: -30%; */
+    /* border: 1px solid rgba(255, 255, 255, 0.089); */
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 0.5s ease-in;
+}
+
+.banner-h1 {
+    opacity: 1 !important;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 17px;
+    color: #ffffff;
+
+}
+
+.banner-container {
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-paragraph {
+    opacity: 1;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+}
+

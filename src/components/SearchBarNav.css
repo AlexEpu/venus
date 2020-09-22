@@ -120,11 +120,15 @@
     padding: 5px;
     color:white;
     transition: 0.3s ease-in-out;
-    border-bottom: 1px solid #00ff22 !important;
+    border-bottom: 1px solid #F73A4C !important;
     font-size: 18px;
     padding: 5px;
     font-weight: 300;
     background-color: transparent;
+
+}
+.menu__search-input:focus {
+   border-bottom: 1px solid #00ff22 !important;
 
 }
 .list {

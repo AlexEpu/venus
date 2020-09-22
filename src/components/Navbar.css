@@ -374,7 +374,7 @@ transition: all 0.4s ease-in-out;
     }
 
     .nav-links:hover {
-        background-color: #1888ff;
+        background-color: #F73A4C;
         border-radius: 0;
     }
 
@@ -403,19 +403,20 @@ transition: all 0.4s ease-in-out;
     .nav-links-mobile {
         display: block;
         text-align: center;
-        padding: 1.5rem;
+        padding: 1.2rem;
         margin: 2rem auto;
         border-radius: 4px;
-        width: 80%;
-        background: #1888ff;
+        /* width: 80%; */
+        background: #F73A4C;
         text-decoration: none;
         color: #fff;
         font-size: 1.5rem;
     }
 
     .nav-links-mobile:hover {
-        background: #fff;
-        color: #1888ff;
+        background: transparent;
+        border: 2px solid rgb(0, 255, 0);
+        color: rgb(0, 255, 0);
         transition: 250ms;
     }
 
@@ -425,7 +426,9 @@ transition: all 0.4s ease-in-out;
 }
 
 
-/* .log-out-Button{margin-left:50px;
-cursor: pointer;}
+@media screen and (max-width: 530px){
 
-.AddButton{margin-left: 50px;} */
+    .menu__search-button{
+        display: none !important;
+    }
+}
