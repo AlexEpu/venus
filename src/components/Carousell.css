@@ -194,6 +194,13 @@ margin-right: 10px;
   flex-wrap: wrap;
   margin-top: 0px !important;
 }
+
+@media screen and (max-width:736px){
+.rec-pagination {
+  display: none !important;
+}
+}
+
 @media screen and (max-width: 600px) {
   .rec-carousel-wrapper {
     background-image: url(../images/backimg1.png);
@@ -244,6 +251,7 @@ margin-right: 10px;
   }
 }
 @media screen and (max-width: 450px) {
+
   .rec-carousel-wrapper {
     background-image: url(../images/backimg1.png);
 
