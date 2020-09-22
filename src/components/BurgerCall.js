@@ -15,14 +15,14 @@ function BurgerNav() {
   const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter = () => {
-    if (window.innerWidth < 980) {
+    if (window.innerWidth < 880) {
       setDropdown(false);
     } else {
       setDropdown(true);
     }
   };
   const onMouseLeave = () => {
-    if (window.innerWidth < 980) {
+    if (window.innerWidth < 880) {
       setDropdown(false);
     } else {
       setDropdown(false);
