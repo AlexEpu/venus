@@ -124,9 +124,10 @@ height: 700px;
 }
 
 .movie-name {
+        font-family: 'Kanit', sans-serif !important;
     flex-wrap: wrap;
-    font-size: 1.6em;
-    color: rgb(189, 189, 189);
+    font-size: 1.5em;
+    color: #9CEC5B;
 }
 
 .movie-title-up{

@@ -60,6 +60,7 @@
 }
 
 .banner-paragraph {
+    line-height: 20px;
     opacity: 1;
     font-family: 'Montserrat',
     sans-serif;
