@@ -114,15 +114,15 @@ export class Login extends React.Component {
             <img alt="login "src={loginImg} />
           </div>
           <div className="form" onSubmit={this.handleSubmit}>
-            <div  className="form-group">
+            <div  className="form-group form-username">
               {/* <label htmlFor="username">Username</label> */}
-              <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
+              <input type="text" classbame="login-username"name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
               <div className="valid">
             {this.state.usernameError}
             
               </div>            
             </div>
-            <div className="form-group">
+            <div className="form-group form-pass">
               {/* <label htmlFor="password">Password</label> */}
               <input type="password" name="password" placeholder="password"  onChange={this.handleChange}/>
               <div  className="valid">
