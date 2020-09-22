@@ -426,7 +426,7 @@ transition: all 0.4s ease-in-out;
 }
 
 
-@media screen and (max-width: 530px){
+@media screen and (max-width: 445px){
 
     .menu__search-button{
         display: none !important;

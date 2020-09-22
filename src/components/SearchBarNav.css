@@ -172,31 +172,30 @@ transition: all 0.3s ease;
 
 @media screen and (max-width: 1250px) {
     .menu__search-form {
-width: 200px !important;
+        /* width: 200px !important; */
         position: absolute;
         transition: margin .5s;
         border-radius: 15px;
-        position: absolute;
         right: 0;
         color: #fff;
         font-size: 24px;
         transform: translate(-50%, -50%);
-        margin-right: 150px;
+        margin-right: 200px;
         outline: none;
         border: none;
 
         background-color: transparent;
     }
     .menu__search-input {
-        width: 150px;
+        width: 110px;
         border: none;
         outline: none;
         border-radius: 0px;
         padding: 5px;
         color: white;
         transition: 0.3s ease-in-out;
-        border-bottom: 1px solid #00ff22 !important;
-        font-size: 18px;
+        border-bottom: 1px solid #F73A4C !important;
+        font-size: 15px;
         padding: 5px;
         font-weight: 300;
         background-color: transparent;
