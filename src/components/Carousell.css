@@ -375,7 +375,36 @@ margin-right: 10px;
     height: 400px !important;
 
   }
-}
+  .rec-item-wrapper,
+  .rec-item-wrapper:hover .image {
+    opacity: 1;
+    width: 290px;
+    height: 390px;
+    -webkit-animation: flash 2s;
+    animation: flash 2s;
+  }
+
+  @-webkit-keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  }
+
 
 @media screen and (max-height: 600px) {}
 
