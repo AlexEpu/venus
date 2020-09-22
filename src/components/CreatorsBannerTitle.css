@@ -57,6 +57,26 @@ color: #fff;
 color: #fff;
 }
 
+@media screen and (max-height: 723px) {
+    .creators-banner-main {
+        padding: 5px;
+        /* background:#F73A4C; */
+        background-image: url(../images/backimg2.jpg);
+        /* border: 10px solid black; */
+        display: flex;
+        /* position: absolute; */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* margin-top: -730px; */
+        background-size: cover;
+        /* height: 150px; */
+        background-position: right 10px bottom 300px;
+        margin-top: 200px;
+    }
+
+}
+
 @media screen and (max-height: 640px) {
     .creators-banner-main {
         padding: 5px;
