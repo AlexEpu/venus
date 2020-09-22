@@ -16,6 +16,13 @@
     margin-right: 10 px;
 }
 
+.card-body:hover{
+    
+    border-bottom: 1px solid rgb(0, 255, 0);
+   
+    
+}
+
 .movie-card-main-container {
     display: flex;
     flex-direction: column;
@@ -79,6 +86,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: 0.3s ease;
 }
 
 a {
@@ -107,6 +115,34 @@ color: #ffffff;
 font-size: 12px;
 text-align: center;
 }
+.card,
+.card:hover .movie-poster {
+    opacity: 1;
+    
+    -webkit-animation: flash 2s;
+    animation: flash 2s;
+}
+
+@-webkit-keyframes flash {
+    0% {
+        opacity: .3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: .3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 @media screen and (max-width: 360px) {
   .card-img-top {
