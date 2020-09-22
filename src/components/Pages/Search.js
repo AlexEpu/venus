@@ -16,7 +16,7 @@ import NoResult from "./SearchFunction/NoResult";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import CarouselLoader from "../CarouselLoader"
-
+import AllMoviesPagination from "../AllMoviesPagination"
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +32,14 @@ class Search extends Component {
       imdbRatingValue: "",
       inputValue: "",
       isLoaded: false,
-      loading: false,
+      totalResults: 0,
+      pagination: [],
+      paginationLinkNext: [],
+      currentPage: [],
+      paginationLinkPrev: [],
+      numberOfPages: [],
+      selfPage: [],
+      paginationSelfLinks: [],
       movies: [],
       error: "",
       filters: {
@@ -79,17 +86,18 @@ class Search extends Component {
       () => {
         const url = generateUrl(this.state.filters);
         fetchMovies(url).then((json) => {
-          this.setState({ isLoaded: true, movies: json.results });
+          this.setState({ isLoaded: true, movies: json.results});
         });
       }
     );
   };
 
-  choicesUpdated = (filterTitle, value) => {
+  choicesUpdated = (filterTitle, value, skip="") => {
     this.setState(
       (prevState) => {
         let { filters } = prevState;
         filters[filterTitle] = value;
+        filters[skip] = skip;
         console.log(filters);
         return { filters };
       },
@@ -97,9 +105,14 @@ class Search extends Component {
         let url = generateUrl(this.state.filters);
         console.log(url);
         fetchMovies(url).then((json) => {
-          this.setState({ isLoaded: true, movies: json.results });
+          this.setState({ isLoaded: true, movies: json.results,pagination: json.pagination, totalResults: json.total_Results,
+            paginationLinkNext: json.pagination.links.next,
+            numberOfPages: json.pagination.numberOfPages,
+            currentPage: json.pagination.currentPage,
+            selfPage: json.pagination.links.self});
           console.log(json.results);
           /*console.log(url)*/
+          
         });
       }
     );
@@ -175,15 +188,71 @@ class Search extends Component {
     this.choicesUpdated("Type", Type.value);
     this.setState({ Type });
   };
+  nextPage = () => {
+    const Url = this.state.paginationLinkNext;
+    console.log(Url);
+    fetch(Url)
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({
+          loading: false,
+          movies: json.results,
+          pagination: json.pagination,
+          currentPage: json.pagination.currentPage,
+          paginationLinkNext: json.pagination.links.next,
+          paginationLinkPrev: json.pagination.links.prev,
+          numberOfPages: json.pagination.numberOfPages,
+          selfPage: json.pagination.links.self,
+        });
+      });
+   
+  };
+  selfPage = (pageNumber) => {
+    const Url = 'https://movies-app-siit.herokuapp.com/movies?take=10&skip=' + (pageNumber - 1) * 10;
+    console.log(Url);
+    fetch(Url)
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({
+          selfPage: json.pagination.links.self,
+          movies: json.results,
+          paginationLinkNext: json.pagination.links.next,
+          paginationLinkPrev: json.pagination.links.prev,
+        });
+      });
+  };
+  PreviousPage = () => {
+    const Url = this.state.paginationLinkPrev;
+    fetch(Url)
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({
+          loading: false,
+          pagination: json.pagination,
+          movies: json.results,
+          currentPage: json.pagination.currentPage,
+          paginationLinkNext: json.pagination.links.next,
+          paginationLinkPrev: json.pagination.links.prev,
+          numberOfPages: json.pagination.numberOfPages,
+          selfPage: json.pagination.links.self,
+        });
+      });
+  };
 
   componentDidMount() {
-    fetchMovies("https://movies-app-siit.herokuapp.com/movies?take=10000").then((json) => {
-      this.setState({ isLoaded: true, movies: json.results });
+    fetchMovies().then((json) => {
+      this.setState({ isLoaded: true, movies: json.results,
+        pagination: json.pagination, totalResults: json.total_Results,
+        paginationLinkNext: json.pagination.links.next,
+        numberOfPages: json.pagination.numberOfPages,
+        currentPage: json.pagination.currentPage,
+        selfPage: json.pagination.links.self,});
     });
   }
 
   render() {
     const { isLoaded } = this.state;
+    const {allPagesCount} = this.state;
 
     if (!isLoaded) {
       return (
@@ -292,8 +361,18 @@ class Search extends Component {
             </div>
             </div>
           ) : (<div><h3> No results found.</h3></div>) }
+          <div>
+          <AllMoviesPagination
+              movieData={this.state.movieData}
+              pagination={this.state.pagination}
+              nextPage={this.nextPage}
+              prevPage={this.PreviousPage}
+              currentPage={this.state.currentPage}
+              numberOfPages={this.state.numberOfPages}
+              selfPage={this.selfPage}
+            />
+          </div>
           
-          <div></div>
         </div>
       );
     }
