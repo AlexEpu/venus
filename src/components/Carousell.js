@@ -6,7 +6,7 @@ import CarouselLoader from './CarouselLoader';
 const breakPoints = [
   { width: 500, itemsToShow: 3, autoplay: true },
   { width: 768, itemsToShow: 3, autoplay: true },
-  { width: 1200, itemsToShow:4, autoplay: true },
+  { width: 1200, itemsToShow:5, autoplay: true },
   { width: 1500, itemsToShow:5, autoplay: true },
 ];
 
