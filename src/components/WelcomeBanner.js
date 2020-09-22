@@ -9,9 +9,8 @@ function WelcomeBanner() {
         <p className="banner-paragraph">
           <i>
             - A galaxy of movies just a click away. Search, add or edit and become
-            the Lord of the Movies.<br></br> 
-            - A galaxy of movies just a click away. Grab
-            the popcorn and join us!
+            the Lord of the Movies.
+    
           </i>
         </p>
       </div>
