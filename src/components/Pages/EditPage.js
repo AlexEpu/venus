@@ -115,9 +115,10 @@ class EditPage extends Component{
 
        return (
          <div className="form-container">
-           <form className="AddForm">
+           <form className="AddForm edit-add-form">
              <h3 className="editFormTitle">Edit Movie</h3>
-             <div className="input-class">
+             
+             <div className="input-class edit-input-class">
                {/* <label>Title</label> */}
                <input
                  className="form-control"

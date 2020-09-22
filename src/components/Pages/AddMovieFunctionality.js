@@ -155,7 +155,7 @@ class AddMovie extends Component {
   render() {
       return (
         <div className="form-container">
-          <div className="AddForm">
+          <div className="AddForm edit-add-form">
             <div id="form">
               <form onSubmit={this.submitMovie}>
                 <h3 className="addMovieTitle">Add Movie</h3>

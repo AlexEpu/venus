@@ -1,2 +1,22 @@
-.editFormTitle{ margin-bottom: 50px;
-color:red}
+.editFormTitle{
+     margin-bottom: 170px;
+color:#F73A4C
+}
+
+.edit-add-form{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 750px;
+}
+
+.edit-input-class-wrapper{
+display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: center;
+}
+
+.edit-input-class{
+margin-top: -150px;
+}
