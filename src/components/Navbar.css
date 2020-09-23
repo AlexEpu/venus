@@ -33,8 +33,8 @@
 
 .navbar-logo img {
     /* margin-right: 50px !important; */
-    width: 150px !important;
-    margin-left:80px !important;
+    width: 140px !important;
+    /* margin-left:0px !important; */
     
 }
 
@@ -135,26 +135,26 @@
     grid-gap: 0vw;
     list-style: none !important;
     text-align: center !important;
-    width:80vw;
+    width:81vw;
     justify-content: start !important;
-    margin-left: 50px !important;
+    /* margin-left: 50px !important; */
     /* margin-right: 2rem; */
 }
 
 .nav-item {
         /* margin-left: 100px; */
 
-    /* margin-left: 20px; */
+    margin-left: 20px;
     display: flex !important;
     align-items: center !important;
     justify-content: center;
     /* height:80px !important; */
 }
 
-.nav-item:first-child {
+/* .nav-item:first-child {
     margin-left: 0px;
  
-}
+} */
 
 
 .nav-links  {
