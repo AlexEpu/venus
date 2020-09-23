@@ -1,5 +1,4 @@
 .pagination {
-    /* color: #f88c1f; */
     align-items: center;
     /* margin-top: 30px; */
     align-self: center;
@@ -9,7 +8,8 @@
     padding-left: 0;
     list-style: none;
     align-self: center;
-    /* border-radius: .25rem; */
+    justify-content: center;
+    padding: 10px;
 }
 
 .page-link {
