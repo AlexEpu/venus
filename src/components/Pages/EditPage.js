@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import  "./EditPage.css"
+import { Link } from "react-router-dom";
+
 
 class EditPage extends Component{   
     constructor(props){
@@ -258,6 +260,7 @@ class EditPage extends Component{
                />
              </div>
              <div className="text-center">
+               <Link to="/movies">
                <button
                  className="btn btn-secondary mr-5"
                  type="button"
@@ -265,6 +268,7 @@ class EditPage extends Component{
                >
                  Save
                </button>
+               </Link>
              </div>
              {this.state.isLoaded ? (
                <div className="isloaded">
