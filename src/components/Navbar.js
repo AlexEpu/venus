@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import { Component } from "react";
-import { Button } from "./Button";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import SearchBarNav from "./SearchBarNav";
-import { CSSTransition } from "react-transition-group";
-import mainlogo from "../images/main-logo.png";
-import logomobile from "../images/logo-mobile-small.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import BurgerNav from "./BurgerCall";
