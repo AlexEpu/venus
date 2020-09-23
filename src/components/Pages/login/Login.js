@@ -1,6 +1,9 @@
 import React from "react";
 import loginImg from "./login.svg";
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import createHistory from 'history/createBrowserHistory'
+import Cookies from "js-cookie";
+
 
 
 const defaultState={username:"",
@@ -89,15 +92,18 @@ export class Login extends React.Component {
         this.setState({loginErr:err});
         localStorage.setItem("accessToken", json.accessToken);
         if(!this.state.loginErr) this.setState({isLoggedIn:true})
+        Cookies.set("username",this.state.username)
         this.setState(defaultState);
+        window.location="/";
       });
     }
   };
 
 
-  render() {
-    if(this.state.isLoggedIn){
-      return <Redirect to="./MyMovies"/> 
+  render() {const history = createHistory();
+
+    if(this.state.isLoggedIn && localStorage.getItem("accessToken") ){
+      return <Redirect to="./Movies" /> 
     }
 
     return (
@@ -108,17 +114,17 @@ export class Login extends React.Component {
             <img alt="login "src={loginImg} />
           </div>
           <div className="form" onSubmit={this.handleSubmit}>
-            <div  className="form-group">
-              <label htmlFor="username">Username</label>
-              <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
+            <div  className="form-group form-username">
+              {/* <label htmlFor="username">Username</label> */}
+              <input type="text" classbame="login-username"name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
               <div className="valid">
             {this.state.usernameError}
             
               </div>            
             </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange}/>
+            <div className="form-group form-pass">
+              {/* <label htmlFor="password">Password</label> */}
+              <input type="password" name="password" placeholder="password"  onChange={this.handleChange}/>
               <div  className="valid">
             {this.state.passwordError}
             {this.state.loginErr}
@@ -131,7 +137,7 @@ export class Login extends React.Component {
         <div className="valid">
             
               </div> 
-          <button type="submit" className="btn-login" onClick={this.handleSubmit}>
+          <button type="submit" className="btn-login" onClick={this.handleSubmit} >
             Login
           </button>
         </div>

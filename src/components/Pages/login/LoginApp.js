@@ -15,7 +15,7 @@ class LoginApp extends React.Component {
     this.rightSide.classList.add("right");
   }
 
-  changeState() {
+  changeState=()=> {
     const { isLoginActive } = this.state;
 
     if (isLoginActive) {
@@ -47,7 +47,7 @@ class LoginApp extends React.Component {
             current={current}
             currentActive={currentActive}
             containerRef={ref => (this.rightSide = ref)}
-            onClick={this.changeState.bind(this)}
+            onClick={this.changeState}
           />
         </div>
       </div>

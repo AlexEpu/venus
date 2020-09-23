@@ -57,7 +57,7 @@
   background-image: url(../images/backimg1.png);
  
 position: absolute;
-  margin-top:250px;
+  margin-top:300px;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -173,13 +173,13 @@ margin-right: 10px;
   transition: all 250ms ease;
   border: none;
  margin: 5px !important;
-  background-color: #1888ff !important;
+  background-color:#F73A4C !important;
   font-size: 0px !important;
   content: "";
   border: 0px !important;
   height:5px !important;
   width: 15px !important;
-  box-shadow: 0 0 1px 1px #1888ff !important;
+  box-shadow: 0 0 1px 1px #F73A4C !important;
   border-radius: 0px !important;
   outline: none;
 }
@@ -194,3 +194,218 @@ margin-right: 10px;
   flex-wrap: wrap;
   margin-top: 0px !important;
 }
+
+@media screen and (max-width:736px){
+.rec-pagination {
+  display: none !important;
+}
+}
+
+@media screen and (max-width: 600px) {
+  .rec-carousel-wrapper {
+    background-image: url(../images/backimg1.png);
+
+    position: absolute;
+    margin-top: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+  }
+  .image {
+    width: 320px;
+    height: 420px;
+    border-radius: 15px !important;
+    outline: none;
+    transition: all 0.3s ease;
+
+    transition: all 0.5s ease-in-out;
+  }
+  .rec-item-wrapper,
+  .rec-item-wrapper:hover .image {
+    opacity: 1;
+    width: 330px;
+    height: 430px;
+    -webkit-animation: flash 2s;
+    animation: flash 2s;
+  }
+
+  @-webkit-keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+
+  .rec-carousel-wrapper {
+    background-image: url(../images/backimg1.png);
+
+    position: absolute;
+    margin-top: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+  }
+
+  .image {
+    width: 280px;
+    height: 380px;
+    border-radius: 15px !important;
+    outline: none;
+    transition: all 0.3s ease;
+
+    transition: all 0.5s ease-in-out;
+  }
+
+  .rec-item-wrapper,
+  .rec-item-wrapper:hover .image {
+    opacity: 1;
+    width: 290px;
+    height: 390px;
+    -webkit-animation: flash 2s;
+    animation: flash 2s;
+  }
+
+  @-webkit-keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .rec-carousel-wrapper {
+    background-image: url(../images/backimg1.png);
+
+    position: absolute;
+    margin-top: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+  }
+
+  .image {
+    width: 180px;
+    height: 280px;
+    border-radius: 15px !important;
+    outline: none;
+    transition: all 0.3s ease;
+
+    transition: all 0.5s ease-in-out;
+  }
+
+  .rec-item-wrapper,
+  .rec-item-wrapper:hover .image {
+    opacity: 1;
+    width: 190px;
+    height: 290px;
+    -webkit-animation: flash 2s;
+    animation: flash 2s;
+  }
+
+  @-webkit-keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-height: 850px) {}
+
+@media screen and (max-height: 723px) {
+  .image {
+    width: 280px;
+    height: 380px;
+    border-radius: 15px !important;
+    outline: none;
+    transition: all 0.3s ease;
+
+    transition: all 0.5s ease-in-out;
+  }
+
+  .rec-item-wrapper {
+    display: flex;
+    align-items: center;
+    width: 300px !important;
+    height: 400px !important;
+
+  }
+  .rec-item-wrapper,
+  .rec-item-wrapper:hover .image {
+    opacity: 1;
+    width: 290px;
+    height: 390px;
+    -webkit-animation: flash 2s;
+    animation: flash 2s;
+  }
+
+  @-webkit-keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flash {
+    0% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  }
+
+
+@media screen and (max-height: 600px) {}
+
+@media screen and (max-height: 500px) {}

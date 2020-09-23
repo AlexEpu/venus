@@ -8,8 +8,9 @@ function WelcomeBanner() {
         <h1 className="banner-h1">WELCOME TO VENUS</h1>
         <p className="banner-paragraph">
           <i>
-            -It might not be Rocket Science but we’ll try to make it look like
-            it’s Out of this world-
+            - A galaxy of movies just a click away. Search, add or edit and become
+            the Lord of the Movies.
+    
           </i>
         </p>
       </div>

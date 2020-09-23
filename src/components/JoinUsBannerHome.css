@@ -66,12 +66,22 @@ margin: 150px 0px 150px 0px;
  justify-self: center;
  margin-right: auto;
  margin-left: auto;
-    
-    
-    
 }
 
-@media screen and (max-width: 980px) {
+.text-container-wrap-text {
+    margin-left: 260px;
+}
+.text-container-wrap-text1 {
+    margin-left: 320px;
+}
+.text-container-wrap-text2 {
+    margin-left: 370px;
+}
+.text-container-wrap-text3 {
+    margin-left: 240px;
+}
+
+@media screen and (max-width: 1040px) {
     .join-us-main-container {
         flex-direction: column;
         min-height: 270px;
@@ -80,26 +90,89 @@ margin: 150px 0px 150px 0px;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         /* text-align: center; */
         flex-wrap: wrap;
     }
+    .text-container-wrap-text {
+        margin-left: 0px;
+    }
 
-        .join-us-main-container-text3 {
-            white-space: pre-wrap;
-            color: #fff;
-            font-size:3em;
-            padding: 15px;
-            flex-wrap: wrap;
+    .text-container-wrap-text1 {
+        margin-left: 0px;
+    }
+
+    .text-container-wrap-text2 {
+        margin-left: 0px;
+    }
+
+    .text-container-wrap-text3 {
+        margin-left: 0px;
+    }
+
+
+    .join-us-main-container-text3 {
+        white-space: pre-wrap;
+        color: #fff;
+        font-size: 3em;
+        padding: 15px;
+        flex-wrap: wrap;
         /* align-self: center; */
-        
-        }
-.button-container {
-    justify-self: center;
-    margin-right: auto;
-    margin-left: auto;
-
-
-
-}
 
     }
+
+    .button-container {
+
+        justify-self: center;
+        margin-right: auto;
+        margin-left: auto;
+
+
+
+    }
+
+    .join-us-main-container-text {
+        white-space: pre-wrap;
+        color: #fff;
+        font-size: 2em;
+        padding: 10px;
+        margin-top: -20px !important;
+    }
+
+    .join-us-main-container-text1 {
+        white-space: pre-wrap;
+        color: #fff;
+        font-size: 1.9em;
+        padding: 15px;
+    }
+
+    .join-us-main-container-text2 {
+        white-space: pre-wrap;
+        color: #fff;
+        font-size: 1.3em;
+        padding: 15px;
+    }
+
+    .btn {
+margin-top: 25px;
+        padding: 15px 35px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        font-weight: 600;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        background-color: #e93749;
+    }
+
+    .join-us-main-container-text3 {
+        white-space: pre-wrap;
+        color: #fff;
+        font-size: 2.1em;
+        padding: 15px;
+    }
+}
+

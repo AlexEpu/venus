@@ -109,48 +109,63 @@ export class Register extends React.Component {
       }
        
 
-        return(
-        <div className="base-container" ref={this.props.containerRef}>
-          <div className="header">Register</div>
-          <div className="content">
-            <div className="image-login">
-              <img alt="register" src={loginImg} />
+        return (
+          <div className="base-container" ref={this.props.containerRef}>
+            <div className="header">Register</div>
+            <div className="content">
+              <div className="image-login">
+                <img alt="register" src={loginImg} />
+              </div>
+              <div className="form">
+                <div className="form-group form-username">
+                  {/* <label htmlFor="username">Username</label> */}
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="username"
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                  />
+                  <div className="valid">{this.state.usernameError}</div>
+                </div>
+                <div className="form-group form-username">
+                  {/* <label htmlFor="email">Email</label> */}
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                  />
+                  <div className="valid">{this.state.emailError}</div>
+                </div>
+                <div className="form-group form-username">
+                  {/* <label htmlFor="password">Password</label> */}
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                  />
+                  <div className="valid">
+                    {this.state.passwordError}
+                    {this.state.loginEr}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="form">
-              <div className="form-group">
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
-                <div className="valid">
-            {this.state.usernameError}
-              </div> 
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange}/>
-                <div className="valid">
-            {this.state.emailError}
-              </div> 
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
-                <div className="valid">
-            {this.state.passwordError}
-            {this.state.loginEr}
-
-              </div> 
-              </div>
+            <div className="register-footer">
+              <div className="valid"></div>
+              <button
+                type="button"
+                className="btn-login"
+                onClick={this.handleSubmit}
+              >
+                Register
+              </button>
             </div>
           </div>
-          <div className="register-footer">
-          <div className="valid">
-            
-              </div> 
-            <button type="button" className="btn-login" onClick={this.handleSubmit}>
-              Register
-            </button>
-          </div>
-        </div>
-      );
+        );
     }
   }

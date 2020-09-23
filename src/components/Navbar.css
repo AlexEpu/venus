@@ -3,26 +3,23 @@
     background: #1f2323;
     /* background: #2c3e50; */
     height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    font-size: 1.1rem ;
     
 }
 
 .navbar-logo {
+   
 
-    justify-self: start;
-    margin-left: 0px;
+    /* justify-self: start !important; */
+    /* margin-left: 40px; */
     cursor: pointer;
 
 
 }
 
-.logo-mobile-small {
-
-    /* display: none; */
-}
 
 .logo-mobile-small img {
     width: 70px;
@@ -31,8 +28,9 @@
 }
 
 .navbar-logo img {
-    width: 150px;
-    margin-left:40px;
+    /* margin-right: 50px !important; */
+    width: 140px !important;
+    /* margin-left:0px !important; */
     
 }
 
@@ -102,7 +100,7 @@
 }
 
 .navbar-logo img {
-    display: inline-block;
+    display: inline-block !important;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -129,28 +127,40 @@
 .nav-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 20px;
-    list-style: none;
-    text-align: center;
-    width: 70vw;
-    justify-content: start;
-    margin-left: 50px;
+    /* grid-gap: 20px; */
+    grid-gap: 0vw;
+    list-style: none !important;
+    text-align: center !important;
+    width:82vw;
+    justify-content: start !important;
+    /* margin-left: 50px !important; */
     /* margin-right: 2rem; */
 }
 
 .nav-item {
-    display: flex;
-    align-items: center;
-    height: 80px;
+        /* margin-left: 100px; */
+
+    margin-left: 20px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center;
+    /* height:80px !important; */
 }
 
-.nav-links {
+/* .nav-item:first-child {
+    margin-left: 0px;
+ 
+} */
+
+
+.nav-links  {
+    /* margin-right: 100px; */
     font-family: 'Montserrat',
     sans-serif;
-    font-weight:600;
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
+    font-weight:700;
+    color: #fff;
+    text-decoration: none !important;
+    padding: 0.5rem 1rem !important;
 }
 
 /* Sweep To Right */
@@ -174,7 +184,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #54ab93;
+    background: #F73A4C;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 0 50%;
@@ -205,6 +215,16 @@
     color: #fff;
 }
 
+.fa-plus {
+    position: absolute !important;
+    right: 0;
+    color: #fff;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+    margin-right:130px;
+    transition: 0.3s ease;
+    
+}
 .nav-links-mobile {
     display: none;
 }
@@ -214,13 +234,19 @@
 }
 
 .fa-search,
-.fa-plus,
+
 .fa-user {
     color: #fff;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, auto);
   grid-gap:65px;  
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; */
+   position: absolute;
+   right: 0;
+   color: #fff;
+   font-size: 24px;
+   transform: translate(-50%, -50%);
+   margin-right:85px;
 }
 
 /* Sweep To Top */
@@ -230,16 +256,51 @@ transition: all 0.4s ease-in-out;
 }
 
 .fa-user:hover{
-    color:#2098D1;
+    color:#F73A4C;
 }
 
 .fa-search:hover {
     color: #2098D1;
 }
 .fa-plus:hover {
-    color: #2098D1;
+    color:#F73A4C;
+}
+.log-out-Button {
+    position: absolute;
+    right: 0;
+    color: #fff;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+    margin-right:50px;
+    transition: 0.4s ease;
+}
+.log-out-Button a{
+    position: absolute;
+    right: 0;
+    color: #00fd00;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease;
+}
+.log-out-Button a:hover {
+    position: absolute;
+    right: 0;
+    color: #F73A4C;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
 }
 
+.log-out-Button:hover {
+   color:#F73A4C;
+    margin-right: 40px;
+}
+.AddButton li {
+    list-style-type: none;
+}
+
+.on-login-buttons li {
+    list-style-type: none;
+}
 
 @media screen and (max-width: 980px) {
     .navbar {
@@ -253,12 +314,13 @@ transition: all 0.4s ease-in-out;
         font-size: 1.2rem;
 
     }
+
     .fa-search,
-    .fa-plus,
     .fa-user {
         display: none;
         ;
     }
+
     .logo-mobile-small img {
         position: absolute;
         /* top: 50%;
@@ -270,14 +332,10 @@ transition: all 0.4s ease-in-out;
         display: block;
     }
 
-.logo-mobile-small {
-    
-   
-    
-}
+ 
 
     .navbar-logo img {
-        display: none;
+        display: none !important;
     }
 
     .fa-caret-down {
@@ -301,23 +359,28 @@ transition: all 0.4s ease-in-out;
     }
 
     .nav-menu.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: #242222;
-        left:0px;
+        left: 0px;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: 1;
-        margin-left:0px;
+        z-index: 300;
+        margin-left: 0px !important;
+        height: 100%;
     }
 
     .nav-links {
         text-align: center;
         padding: 2rem;
-        width: 100%;
+        /* width: 70%; */
         display: table;
+        font-size: 16px!important;
     }
 
     .nav-links:hover {
-        background-color: #1888ff;
+        background-color: #F73A4C;
         border-radius: 0;
     }
 
@@ -346,23 +409,33 @@ transition: all 0.4s ease-in-out;
     .nav-links-mobile {
         display: block;
         text-align: center;
-        padding: 1.5rem;
-        margin: 2rem auto;
+        padding: 0.8rem;
+        margin: 1.5rem auto;
+        font-weight: 600;
         border-radius: 4px;
-        width: 80%;
-        background: #1888ff;
+        /* width: 80%; */
+        background: #F73A4C;
         text-decoration: none;
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .nav-links-mobile:hover {
-        background: #fff;
-        color: #1888ff;
+        background: transparent;
+        border: 2px solid rgb(0, 255, 0);
+        color: rgb(0, 255, 0);
         transition: 250ms;
     }
 
-    button {
+    /* button {
         display: none;
+    } */
+}
+
+
+@media screen and (max-width: 445px){
+
+    .menu__search-button{
+        display: none !important;
     }
 }

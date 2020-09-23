@@ -49,17 +49,23 @@ padding:0px 10px;
 font-size:16px;
 font-family: 'Montserrat',
 sans-serif;
-background-color: lightgray;
-border:0;
-border-radius: 4px;
+background-color: transparent;
+border-bottom: 1px solid #F73A4C !important;
 margin-bottom: 10px;
 transition: all 250ms ease-in-out;
+ border: none;
+ outline: none;
+ padding: 5px;
+ transition: 0.3s ease-in-out;
 
 }
 
 
-.form-group input:focus{outline:none;
-box-shadow:0px 0px 12px 0.8px rgb(61, 61, 197)}
+.form-group input:focus{
+    outline:none;
+box-shadow: 0px 1px 27px 0px rgba(0, 0, 0, 0.356);
+border-bottom: 2px solid #08c721 !important;
+}
 
 .login-footer, .register-footer{
     margin-top:4px;
@@ -70,3 +76,27 @@ color:red;
 margin-top:0px;
 margin-bottom: 0px;
 padding:0px}
+
+@media screen and (max-width: 800px) {
+    .header {
+        display: none !important;
+        margin-top: -70px;
+        display: flex;
+        padding: 2px;
+        font-size: 20px;
+        font-family: 'Montserrat',
+            sans-serif;
+    }
+    .form-username input{
+min-width: 60px !important;
+font-size: 9px;
+    }
+    .form-pass input {
+        min-width: 60px !important;
+        font-size: 9px;
+    }
+
+    .image-login {
+        display: none;
+    }
+}

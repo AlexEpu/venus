@@ -2,14 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  
-  
-  
+  font-family: 'Montserrat',
+    sans-serif;
+
+
+
+
 }
 
 #root {
-  background:#232727;
+  background: #232727;
 
 
 }
@@ -18,11 +20,16 @@
 .movies,
 .mymovies,
 .myaccount,
-.join-us {
+.join-us,
+.movie-details,
+.movie-search,
+.add-movies {
+
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 120vh;
+  /* background: #232727 !important; */
   /* font-size: 3rem; */
 }
 
@@ -35,16 +42,36 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; */
-  
+
 }
 
 .movies {
-  background-image: url('./images/img-2.jpg');
+  /* background-image: url('./images/img-2.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  font-size: 100px;
+  font-size: 100px; */
+  /* margin: 0;
+  padding: 0;
+  min-height: 0vh;
+  background: #232727; */
+}
+
+.movie-details {
+  /* background-image: url('./images/img-3.jpg');
+   background-position: center;
+   background-size: fill;
+   background-repeat: no-repeat;
+   color: #fff;
+   font-size: 100px; */
+  justify-content: unset;
+  margin: 0;
+  padding: 0;
+  min-height: 0vh;
+  background: #232727;
+  align-items: unset;
+  justify-content: unset;
 }
 
 .mymovies {
@@ -54,6 +81,22 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
+}
+
+.add-movies {
+  background-image: url('./images/img-5.jpg');
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.movie-search {
+  /* margin: 0;
+  padding: 0;
+  min-height: 0vh;
+  background: #232727 !important; */
 }
 
 .myaccount {
@@ -73,4 +116,3 @@
   color: #fff;
   font-size: 100px;
 }
-
