@@ -9,7 +9,11 @@
     list-style: none;
     align-self: center;
     justify-content: center;
-    padding: 10px;
+}
+
+.pag-main-container{
+    padding: 15px;
+    margin-bottom: 10px;
 }
 
 .page-link {
