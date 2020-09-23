@@ -15,6 +15,7 @@ class EditPage extends Component{
         Poster: "",
         Country: "",
         token:"",
+        Plot:"",
         movie:{},
         Language: "",
         Runtime: "",
@@ -49,6 +50,7 @@ class EditPage extends Component{
             });
             console.log(this.state.movie)
             this.setState({id:this.state.movie_id});
+            this.setState({Plot:this.state.movie.Plot});
             this.setState({Title: this.state.movie.Title});
             this.setState({Year: this.state.movie.Year});
             this.setState({Genre: this.state.movie.Genre});
@@ -83,6 +85,7 @@ class EditPage extends Component{
             "Runtime": this.state.Runtime,
             "Country": this.state.Country,
             "Poster": this.state.Poster,
+            "Plot": this.state.Plot,
             "ImdbVotes": this.state.ImdbVotes,
             "ImdbRating": this.state.ImdbRating,
             "imdbID": this.state.imdbID,
@@ -96,6 +99,7 @@ class EditPage extends Component{
             this.setState({
                 Title: "",
                 Year: "",
+                Plot:"",
                 Genre: "",
                 Poster: "",
                 Country: "",
@@ -202,6 +206,18 @@ class EditPage extends Component{
                  value={this.state.Poster}
                  onChange={(e) => {
                    this.setState({ Poster: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
+               {/* <label>Poster</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Modify Plot (optional)"
+                 name="Plot"
+                 value={this.state.Plot}
+                 onChange={(e) => {
+                   this.setState({ Plot: e.target.value });
                  }}
                />
              </div>
