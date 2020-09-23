@@ -3,15 +3,17 @@ import loginImg from "./login.svg";
 import { Redirect } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 import Cookies from "js-cookie";
+import { useAlert } from 'react-alert'
+ 
 
-
+const Alert = () => {
+  const alert = useAlert()}
 
 const defaultState={username:"",
 password:"",
 usernameError:"",
 passwordError:"",
 isLoggedIn:false,
-loginErr:"",
 submitted:false}
 
 
@@ -24,7 +26,6 @@ export class Login extends React.Component {
    passwordError:"",
    submitted:false,
    isLoggedIn:false,
-   loginErr:"",
 
     }
 
@@ -78,8 +79,9 @@ export class Login extends React.Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
-        password,
+        username:this.state.username,
+        password:this.state.password,
+        
       }
         
       ),
@@ -88,13 +90,11 @@ export class Login extends React.Component {
       .then((res) => res.json())
       .then((json) => {
         console.log(json.message);
-        const err=json.message
-        this.setState({loginErr:err});
         localStorage.setItem("accessToken", json.accessToken);
-        if(!this.state.loginErr) this.setState({isLoggedIn:true})
-        Cookies.set("username",this.state.username)
-        this.setState(defaultState);
+        if(json.authenticated===true)
         window.location="/";
+        else alert(json.message)
+        this.setState(defaultState);
       });
     }
   };
@@ -102,9 +102,7 @@ export class Login extends React.Component {
 
   render() {const history = createHistory();
 
-    if(this.state.isLoggedIn && localStorage.getItem("accessToken") ){
-      return <Redirect to="./Movies" /> 
-    }
+
 
     return (
       <div className="base-container" ref={this.props.containerRef}>
@@ -124,11 +122,9 @@ export class Login extends React.Component {
             </div>
             <div className="form-group form-pass">
               {/* <label htmlFor="password">Password</label> */}
-              <input type="password" name="password" placeholder="password"  onChange={this.handleChange}/>
+              <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange}/>
               <div  className="valid">
             {this.state.passwordError}
-            {this.state.loginErr}
-
           </div>
             </div>
           </div>
