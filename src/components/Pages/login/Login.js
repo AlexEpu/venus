@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 import Cookies from "js-cookie";
 import { useAlert } from 'react-alert'
+import './LoginApp.css'
  
 
 const Alert = () => {
@@ -17,6 +18,7 @@ isLoggedIn:false,
 submitted:false}
 
 
+
 export class Login extends React.Component {
 
 
@@ -24,6 +26,7 @@ export class Login extends React.Component {
    password:"",
    usernameError:"",
    passwordError:"",
+   errMessage:"",
    submitted:false,
    isLoggedIn:false,
 
@@ -93,7 +96,7 @@ export class Login extends React.Component {
         localStorage.setItem("accessToken", json.accessToken);
         if(json.authenticated===true)
         window.location="/";
-        else alert(json.message)
+        else this.setState({errMessage:json.message})
         this.setState(defaultState);
       });
     }
@@ -111,6 +114,9 @@ export class Login extends React.Component {
           <div className="image-login">
             <img alt="login "src={loginImg} />
           </div>
+          <div className="errmessage">
+            {this.state.errMessage}
+            </div>
           <div className="form" onSubmit={this.handleSubmit}>
             <div  className="form-group form-username">
               {/* <label htmlFor="username">Username</label> */}
@@ -125,6 +131,7 @@ export class Login extends React.Component {
               <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange}/>
               <div  className="valid">
             {this.state.passwordError}
+           
           </div>
             </div>
           </div>

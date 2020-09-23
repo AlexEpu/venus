@@ -23,6 +23,9 @@
   z-index: 99;
 }
 
+.errmessage{font-weight: bold;
+color: red;
+text-align: center;}
 
 .container{
   display: flex;
