@@ -17,6 +17,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import CarouselLoader from "../CarouselLoader"
 import AllMoviesPagination from "../AllMoviesPagination"
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -86,13 +88,13 @@ class Search extends Component {
       () => {
         const url = generateUrl(this.state.filters);
         fetchMovies(url).then((json) => {
-          this.setState({ isLoaded: true, movies: json.results});
+          this.setState({ isLoaded: true, movies: json.results });
         });
       }
     );
   };
 
-  choicesUpdated = (filterTitle, value, skip="") => {
+  choicesUpdated = (filterTitle, value, skip = "") => {
     this.setState(
       (prevState) => {
         let { filters } = prevState;
@@ -105,14 +107,18 @@ class Search extends Component {
         let url = generateUrl(this.state.filters);
         console.log(url);
         fetchMovies(url).then((json) => {
-          this.setState({ isLoaded: true, movies: json.results,pagination: json.pagination, totalResults: json.total_Results,
+          this.setState({
+            isLoaded: true,
+            movies: json.results,
+            pagination: json.pagination,
+            totalResults: json.total_Results,
             paginationLinkNext: json.pagination.links.next,
             numberOfPages: json.pagination.numberOfPages,
             currentPage: json.pagination.currentPage,
-            selfPage: json.pagination.links.self});
+            selfPage: json.pagination.links.self,
+          });
           console.log(json.results);
           /*console.log(url)*/
-          
         });
       }
     );
@@ -205,10 +211,11 @@ class Search extends Component {
           selfPage: json.pagination.links.self,
         });
       });
-   
   };
   selfPage = (pageNumber) => {
-    const Url = 'https://movies-app-siit.herokuapp.com/movies?take=10&skip=' + (pageNumber - 1) * 10;
+    const Url =
+      "https://movies-app-siit.herokuapp.com/movies?take=10&skip=" +
+      (pageNumber - 1) * 10;
     console.log(Url);
     fetch(Url)
       .then((response) => response.json())
@@ -240,19 +247,30 @@ class Search extends Component {
   };
 
   componentDidMount() {
+    const AOS = require("aos");
+    this.aos = AOS;
+    this.aos.init({ duration: 1000 });
     fetchMovies().then((json) => {
-      this.setState({ isLoaded: true, movies: json.results,
-        pagination: json.pagination, totalResults: json.total_Results,
+      this.setState({
+        isLoaded: true,
+        movies: json.results,
+        pagination: json.pagination,
+        totalResults: json.total_Results,
         paginationLinkNext: json.pagination.links.next,
         numberOfPages: json.pagination.numberOfPages,
         currentPage: json.pagination.currentPage,
-        selfPage: json.pagination.links.self,});
+        selfPage: json.pagination.links.self,
+      });
     });
+  }
+
+  componentDidUpdate() {
+    this.aos.refresh();
   }
 
   render() {
     const { isLoaded } = this.state;
-    const {allPagesCount} = this.state;
+    const { allPagesCount } = this.state;
 
     if (!isLoaded) {
       return (
@@ -276,40 +294,41 @@ class Search extends Component {
           </div>
           <div className="search-container-wrapper">
             <div className="search-container">
-                <div className="enterboxes ">
-                  <RuntimeFilter
-                    handleRuntime={this.handleRuntime}
-                    runtimeValue={this.state.runtimeValue}
-                    handleRuntimeChange={this.handleRuntimeChange}
+              <div className="enterboxes ">
+                <RuntimeFilter
+                  handleRuntime={this.handleRuntime}
+                  runtimeValue={this.state.runtimeValue}
+                  handleRuntimeChange={this.handleRuntimeChange}
+                />
+                <ImdbRatingF
+                  ratingChange={this.ratingChange}
+                  imdbRatingValue={this.state.imdbRatingValue}
+                  ratingValue={this.ratingValue}
+                />
+                <Year
+                  handleYearChange={this.handleYearChange}
+                  Year={this.state.Year}
+                />
+                <div className="dropdown">
+                  <Country
+                    handleCountryChange={this.handleCountryChange}
+                    Country={this.state.Country}
                   />
-                  <ImdbRatingF
-                    ratingChange={this.ratingChange}
-                    imdbRatingValue={this.state.imdbRatingValue}
-                    ratingValue={this.ratingValue}
+                  <Genre
+                    handleGenreChange={this.handleGenreChange}
+                    Genre={this.state.Genre}
                   />
-                  <Year
-                    handleYearChange={this.handleYearChange}
-                    Year={this.state.Year}
+                  <Type
+                    handleTypeChange={this.handleTypeChange}
+                    Type={this.state.Type}
                   />
-                   <div className="dropdown">
-                <Country
-                  handleCountryChange={this.handleCountryChange}
-                  Country={this.state.Country}
-                />
-                <Genre
-                  handleGenreChange={this.handleGenreChange}
-                  Genre={this.state.Genre}
-                />
-                <Type
-                  handleTypeChange={this.handleTypeChange}
-                  Type={this.state.Type}
-                />
-                <Language
-                  handleLanguageChange={this.handleLanguageChange}
-                  Language={this.state.Language}
-                />
+                  <Language
+                    handleLanguageChange={this.handleLanguageChange}
+                    Language={this.state.Language}
+                  />
                   <div className="button-reset">
-                    <Button className="btn"
+                    <Button
+                      className="btn"
                       variant="contained"
                       color="primary"
                       content="span"
@@ -326,43 +345,49 @@ class Search extends Component {
 
           {this.state.movies ? (
             <div className={"movie-card-main-container-2"}>
-            <div className="movie-card-container">
-              {this.state.movies
-                .filter((image) => image.Poster && image.Poster !== "N/A")
-                .map((image, index) => (
-                  <Link to={`/movie-details?id=${image._id}`} key={index}>
-                    <div>
-                <div className="movie-poster-details">
-                  <>
-                    <Card>
-                      <Card.Img
-                        className="movie-poster"
-                        top
-                        variant="top"
-                        src={image.Poster}
-                      />
-                      <Card.Body>
-                        <Card.Title className="movie-title">
-                          {image.Title}
-                        </Card.Title>
-                        <Card.Text className="movie-title-text">
-                          <li>Genre: {image.Genre}</li>
-                          <li>Rating: {image.imdbRating}</li>
-                          <li>Year: {image.Year}</li>
-                          
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </>
-                </div>
+              <div className="movie-card-container">
+                {this.state.movies
+                  .filter((image) => image.Poster && image.Poster !== "N/A")
+                  .map((image, index) => (
+                    <Link to={`/movie-details?id=${image._id}`} key={index}>
+                      <div>
+                        <div
+                          data-aos="zoom-in"
+                          className="movie-poster-details"
+                        >
+                          <>
+                            <Card>
+                              <Card.Img
+                                className="movie-poster"
+                                top
+                                variant="top"
+                                src={image.Poster}
+                              />
+                              <Card.Body>
+                                <Card.Title className="movie-title">
+                                  {image.Title}
+                                </Card.Title>
+                                <Card.Text className="movie-title-text">
+                                  <li>Genre: {image.Genre}</li>
+                                  <li>Rating: {image.imdbRating}</li>
+                                  <li>Year: {image.Year}</li>
+                                </Card.Text>
+                              </Card.Body>
+                            </Card>
+                          </>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
               </div>
-                  </Link>
-                ))}
             </div>
+          ) : (
+            <div>
+              <h3> No results found.</h3>
             </div>
-          ) : (<div><h3> No results found.</h3></div>) }
-          <div>
-          <AllMoviesPagination
+          )}
+          <div data-aos="zoom-in">
+            <AllMoviesPagination
               movieData={this.state.movieData}
               pagination={this.state.pagination}
               nextPage={this.nextPage}
@@ -372,7 +397,6 @@ class Search extends Component {
               selfPage={this.selfPage}
             />
           </div>
-          
         </div>
       );
     }

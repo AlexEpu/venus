@@ -121,12 +121,14 @@ color: #00ff15c2;
 .picture-left-container:hover .picture-left,
 .picture-middle-container:hover .picture-middle,
 .picture-right-container:hover .picture-right {
+    transition: 1s ease;
     opacity: 0.4;
 }
 
 .picture-left-container:hover .short-desc,
 .picture-middle-container:hover .short-desc,
 .picture-right-container:hover .short-desc {
+    transition: 1s ease;
     text-align: justify;
     opacity: 1;
 }
