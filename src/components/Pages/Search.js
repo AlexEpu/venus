@@ -18,7 +18,6 @@ import Button from "@material-ui/core/Button";
 import CarouselLoader from "../CarouselLoader"
 import AllMoviesPagination from "../AllMoviesPagination"
 import { useEffect } from "react";
-import Aos from "aos";
 import "aos/dist/aos.css";
 class Search extends Component {
   constructor(props) {
