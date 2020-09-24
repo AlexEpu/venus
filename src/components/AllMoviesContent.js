@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import "./AllMoviesContent.css";
 import AllMoviesPagination from "./AllMoviesPagination";
 import CarouselLoader from "./CarouselLoader"
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+
+
 
 export class AllMovies extends Component {
   constructor(props) {
@@ -25,9 +31,14 @@ export class AllMovies extends Component {
   }
 
   componentDidMount() {
+    const AOS = require("aos");
+    this.aos = AOS;
+    this.aos.init({ duration: 1000 });
     this.setState({ loading: true });
+
     fetch(`https://movies-app-siit.herokuapp.com/movies`)
       .then((response) => response.json())
+
       .then((json) => {
         this.setState({
           pagination: json.pagination,
@@ -40,6 +51,10 @@ export class AllMovies extends Component {
           selfPage: json.pagination.links.self,
         });
       });
+  }
+
+  componentDidUpdate() {
+    this.aos.refresh();
   }
 
   nextPage = () => {
@@ -59,10 +74,11 @@ export class AllMovies extends Component {
           selfPage: json.pagination.links.self,
         });
       });
-   
   };
   selfPage = (pageNumber) => {
-    const Url = 'https://movies-app-siit.herokuapp.com/movies?take=10&skip=' + (pageNumber - 1) * 10;
+    const Url =
+      "https://movies-app-siit.herokuapp.com/movies?take=10&skip=" +
+      (pageNumber - 1) * 10;
     console.log(Url);
     fetch(Url)
       .then((response) => response.json())
@@ -103,54 +119,53 @@ export class AllMovies extends Component {
     //     </div>
     //   );
     // } else {
-      return (
-    
-        <div className={"movie-card-main-container"}>
-          <div className="movie-card-container">
-            {this.state.movieData.map((movie, index) => (
-              <Link to={`/movie-details?id=${movie._id}`} key={index}>
-                <div>
-                  <div className="movie-poster-details">
-                    <>
-                      <Card>
-                        <Card.Img
-                          className="movie-poster"
-                          top
-                          variant="top"
-                          src={movie.Poster}
-                        />
-                        <Card.Body>
-                          <Card.Title className="movie-title">
-                            {movie.Title}
-                          </Card.Title>
-                          <Card.Text className="movie-title-text">
-                            <li>Genre: {movie.Genre}</li>
-                            <li>Rating: {movie.imdbRating}</li>
-                            <li>Year: {movie.Year}</li>
-                          
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </>
-                  </div>
+
+    return (
+      <div className={"movie-card-main-container"}>
+        <div className="movie-card-container">
+          {this.state.movieData.map((movie, index) => (
+            <Link to={`/movie-details?id=${movie._id}`} key={index}>
+              <div>
+                <div data-aos="zoom-in" className="movie-poster-details">
+                  <>
+                    <Card>
+                      <Card.Img
+                        className="movie-poster"
+                        top
+                        variant="top"
+                        src={movie.Poster}
+                      />
+                      <Card.Body>
+                        <Card.Title className="movie-title">
+                          {movie.Title}
+                        </Card.Title>
+                        <Card.Text className="movie-title-text">
+                          <li>Genre: {movie.Genre}</li>
+                          <li>Rating: {movie.imdbRating}</li>
+                          <li>Year: {movie.Year}</li>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </>
                 </div>
-              </Link>
-            ))}
-          </div>
-          <div className="pag-container">
-            <AllMoviesPagination
-              movieData={this.state.movieData}
-              pagination={this.state.pagination}
-              nextPage={this.nextPage}
-              prevPage={this.PreviousPage}
-              currentPage={this.state.currentPage}
-              numberOfPages={this.state.numberOfPages}
-              selfPage={this.selfPage}
-            />
-          </div>
+              </div>
+            </Link>
+          ))}
         </div>
-      );
-    }
+        <div data-aos="zoom-in" className="pag-container">
+          <AllMoviesPagination
+            movieData={this.state.movieData}
+            pagination={this.state.pagination}
+            nextPage={this.nextPage}
+            prevPage={this.PreviousPage}
+            currentPage={this.state.currentPage}
+            numberOfPages={this.state.numberOfPages}
+            selfPage={this.selfPage}
+          />
+        </div>
+      </div>
+    );
   }
+}
 
 export default AllMovies;
