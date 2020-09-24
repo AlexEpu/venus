@@ -3,16 +3,20 @@ import loginImg from "./login.svg";
 import { Redirect } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 import Cookies from "js-cookie";
+import { useAlert } from 'react-alert'
+import './LoginApp.css'
+ 
 
-
+const Alert = () => {
+  const alert = useAlert()}
 
 const defaultState={username:"",
 password:"",
 usernameError:"",
 passwordError:"",
 isLoggedIn:false,
-loginErr:"",
 submitted:false}
+
 
 
 export class Login extends React.Component {
@@ -22,9 +26,9 @@ export class Login extends React.Component {
    password:"",
    usernameError:"",
    passwordError:"",
+   errMessage:"",
    submitted:false,
    isLoggedIn:false,
-   loginErr:"",
 
     }
 
@@ -78,8 +82,9 @@ export class Login extends React.Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
-        password,
+        username:this.state.username,
+        password:this.state.password,
+        
       }
         
       ),
@@ -88,13 +93,11 @@ export class Login extends React.Component {
       .then((res) => res.json())
       .then((json) => {
         console.log(json.message);
-        const err=json.message
-        this.setState({loginErr:err});
         localStorage.setItem("accessToken", json.accessToken);
-        if(!this.state.loginErr) this.setState({isLoggedIn:true})
-        Cookies.set("username",this.state.username)
-        this.setState(defaultState);
+        if(json.authenticated===true)
         window.location="/";
+        else this.setState({errMessage:json.message})
+        this.setState(defaultState);
       });
     }
   };
@@ -102,42 +105,50 @@ export class Login extends React.Component {
 
   render() {const history = createHistory();
 
-    if(this.state.isLoggedIn && localStorage.getItem("accessToken") ){
-      return <Redirect to="./Movies" /> 
-    }
+
 
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Login</div>
+        {/* <div className="header">Login</div> */}
         <div className="content">
-          <div className="image-login">
-            <img alt="login "src={loginImg} />
+          <div className="image-login image-login-sign-in">
+            <i class="fas fa-door-open fa-5x"></i>
+            {/* <img alt="login "src={loginImg} /> */}
           </div>
+          <div className="errmessage">{this.state.errMessage}</div>
           <div className="form" onSubmit={this.handleSubmit}>
-            <div  className="form-group form-username">
+            <div className="form-group form-username">
               {/* <label htmlFor="username">Username</label> */}
-              <input type="text" classbame="login-username"name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
-              <div className="valid">
-            {this.state.usernameError}
-            
-              </div>            
+              <input
+                type="text"
+                classbame="login-username"
+                name="username"
+                placeholder="username"
+                value={this.state.username}
+                onChange={this.handleChange}
+              />
+              <div className="valid">{this.state.usernameError}</div>
             </div>
             <div className="form-group form-pass">
               {/* <label htmlFor="password">Password</label> */}
-              <input type="password" name="password" placeholder="password"  onChange={this.handleChange}/>
-              <div  className="valid">
-            {this.state.passwordError}
-            {this.state.loginErr}
-
-          </div>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+              <div className="valid">{this.state.passwordError}</div>
             </div>
           </div>
         </div>
         <div className="login-footer">
-        <div className="valid">
-            
-              </div> 
-          <button type="submit" className="btn-login" onClick={this.handleSubmit} >
+          <div className="valid"></div>
+          <button
+            type="submit"
+            className="btn-login"
+            onClick={this.handleSubmit}
+          >
             Login
           </button>
         </div>

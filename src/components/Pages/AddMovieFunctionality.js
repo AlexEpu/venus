@@ -13,6 +13,7 @@ class AddMovie extends Component {
       Genre: "",
       Poster: "",
       Country: "",
+      Plot:"",
       Language: "",
       Runtime: "",
       ImdbVotes: "",
@@ -32,6 +33,7 @@ class AddMovie extends Component {
       Country: this.state.Country,
       Year: this.state.Year,
       Genre: this.state.Genre,
+      Plot:this.state.Plot,
       Language: this.state.Language,
       Runtime: this.state.Runtime,
       ImdbVotes: this.state.ImdbVotes,
@@ -50,6 +52,7 @@ class AddMovie extends Component {
       Genre: "",
       Poster: "",
       Country: "",
+      Plot:"",
       Language: "",
       Runtime: "",
       ImdbVotes: "",
@@ -64,6 +67,10 @@ class AddMovie extends Component {
     let Error = "";
 
     if (!this.state.Title) {
+      Error = "Input cannot be blank";
+    }
+
+    if (!this.state.Plot) {
       Error = "Input cannot be blank";
     }
 
@@ -155,12 +162,12 @@ class AddMovie extends Component {
   render() {
       return (
         <div className="form-container">
-          <div className="AddForm edit-add-form">
-            <div id="form">
+          <div className="AddForm edit-add-form add-form-add">
+            <div id="form form-add-page">
               <form onSubmit={this.submitMovie}>
                 <h3 className="addMovieTitle">Add Movie</h3>
                 {/* <label className="addMovieTitle">Movie Title</label> */}
-                <input type="text" className="input-class"
+                <input type="text" className="input-class input-class-add"
                   value={this.state.Title}
                   placeholder="Enter Movie Title"
                   name="Title"
@@ -226,6 +233,9 @@ class AddMovie extends Component {
                   name="Runtime"
                   onChange={this.changeSubmissions}
                 ></input>
+                <div>
+                  <h6 className="validateInput">{this.state.Error} </h6>
+                </div>
                 {/* <label className="addImdbVotes">IMDB votes</label> */}
                 <input
                   value={this.state.ImdbVotes}
@@ -262,6 +272,17 @@ class AddMovie extends Component {
                 <div>
                   <h6 className="validateInput">{this.state.Error} </h6>
                 </div>
+                <input
+                  type="text"
+                  value={this.state.Plot}
+                  placeholder="Enter Plot"
+                  name="Plot"
+                  className="input-class"
+                  onChange={this.changeSubmissions}
+                ></input>
+                <div>
+                  <h6 className="validateInput">{this.state.Error} </h6>
+                </div>
                 {/* <label className="addPoster">Poster</label> */}
                 <input
                   value={this.state.Poster}
@@ -285,6 +306,7 @@ class AddMovie extends Component {
                   className="input-class"
                   onChange={this.changeSubmissions}
                 ></input>
+               
                 <div className="addMovieButton">
                   <div>
                     <h6 className="validateInput">{this.state.Error} </h6>

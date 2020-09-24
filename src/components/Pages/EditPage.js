@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import  "./EditPage.css"
+import { Link } from "react-router-dom";
+
 
 class EditPage extends Component{   
     constructor(props){
@@ -15,6 +17,7 @@ class EditPage extends Component{
         Poster: "",
         Country: "",
         token:"",
+        Plot:"",
         movie:{},
         Language: "",
         Runtime: "",
@@ -49,6 +52,7 @@ class EditPage extends Component{
             });
             console.log(this.state.movie)
             this.setState({id:this.state.movie_id});
+            this.setState({Plot:this.state.movie.Plot});
             this.setState({Title: this.state.movie.Title});
             this.setState({Year: this.state.movie.Year});
             this.setState({Genre: this.state.movie.Genre});
@@ -83,6 +87,7 @@ class EditPage extends Component{
             "Runtime": this.state.Runtime,
             "Country": this.state.Country,
             "Poster": this.state.Poster,
+            "Plot": this.state.Plot,
             "ImdbVotes": this.state.ImdbVotes,
             "ImdbRating": this.state.ImdbRating,
             "imdbID": this.state.imdbID,
@@ -96,6 +101,7 @@ class EditPage extends Component{
             this.setState({
                 Title: "",
                 Year: "",
+                Plot:"",
                 Genre: "",
                 Poster: "",
                 Country: "",
@@ -206,6 +212,18 @@ class EditPage extends Component{
                />
              </div>
              <div className="input-class">
+               {/* <label>Poster</label> */}
+               <input
+                 className="form-control"
+                 placeholder="Modify Plot (optional)"
+                 name="Plot"
+                 value={this.state.Plot}
+                 onChange={(e) => {
+                   this.setState({ Plot: e.target.value });
+                 }}
+               />
+             </div>
+             <div className="input-class">
                {/* <label>imdbID</label> */}
                <input
                  className="form-control"
@@ -242,6 +260,7 @@ class EditPage extends Component{
                />
              </div>
              <div className="text-center">
+               <Link to="/movies">
                <button
                  className="btn btn-secondary mr-5"
                  type="button"
@@ -249,6 +268,7 @@ class EditPage extends Component{
                >
                  Save
                </button>
+               </Link>
              </div>
              {this.state.isLoaded ? (
                <div className="isloaded">

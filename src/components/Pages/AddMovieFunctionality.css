@@ -11,13 +11,20 @@
     background-size: cover;
     flex-direction: column;
     display: flex;
-    width: 400px;
+    width: 350px;
     height: 910px;
     align-self: center;
     border: 2px solid rgb(48, 48, 48);
     border-radius: 15px;
     align-items: center;
     justify-content: center;
+}
+
+.add-form-add {
+    height: 850px !important;
+}
+form .input-class-add{
+    margin-bottom: 30px !important;
 }
 
 .form-container {
@@ -56,14 +63,14 @@ form input {
     outline: none;
     border-radius: 5px;
     position: absolute;
-    padding: 10px 127px;
+    padding: 10px 85px;
     color: rgb(255, 255, 255);
     font-size: 17px;
     font-weight: 600;
     background-color: #F73A4C;
     cursor: pointer;
     left: 50%;
-    margin-left: -173px;
+    margin-left: -131px;
     margin-top: 30px;
     transition: 0.3s ease;
 
@@ -95,7 +102,7 @@ input {
       border-bottom: 1px solid #F73A4C !important;
 }
 form input {
-    width: 300px;
+    width: 260px;
     margin-bottom: 20px;
     border: none;
     outline: none;
@@ -123,7 +130,7 @@ form input:focus {
 
 .btn-secondary {
     position: absolute;
-padding: 10px 127px !important;
+padding: 10px 110px !important;
 font-size: 20px;
 transform: translate(-50%, -50%);
 margin-top: 50px;
@@ -138,6 +145,62 @@ color: #fff;
 }
 
 .addMovieTitle {
+    position: absolute;
     color: #F73A4C;
 text-align: center;
-margin-bottom: 30px;}
+margin-top: -50px;
+left: 50%;
+margin-left: -52px;
+
+}
+
+@media screen and (max-width: 380px){
+.AddForm {
+    margin: 100px 0px 100px 0px;
+    background-image: url(../../images/backimg1.png);
+    background-size: cover;
+    flex-direction: column;
+    display: flex;
+    width: 250px;
+    height: 910px;
+    align-self: center;
+    border: 2px solid rgb(48, 48, 48);
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+}
+form input {
+    width: 220px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    padding: 5px;
+    transition: 0.3s ease-in-out;
+}
+.btn-secondary {
+    position: absolute;
+padding: 10px 90px !important;
+font-size: 20px;
+transform: translate(-50%, -50%);
+margin-top: 50px;
+}
+.add-movie-btn {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    position: absolute;
+    padding: 10px 60px;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    font-weight: 600;
+    background-color: #F73A4C;
+    cursor: pointer;
+    left: 50%;
+    margin-left: -106px;
+    margin-top: 30px;
+    transition: 0.3s ease;
+
+
+}
+}

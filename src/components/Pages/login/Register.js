@@ -111,10 +111,11 @@ export class Register extends React.Component {
 
         return (
           <div className="base-container" ref={this.props.containerRef}>
-            <div className="header">Register</div>
+            {/* <div className="header">Register</div> */}
             <div className="content">
               <div className="image-login">
-                <img alt="register" src={loginImg} />
+                <i class="fas fa-user-plus fa-5x"></i>
+                {/* <img alt="register" src={loginImg} /> */}
               </div>
               <div className="form">
                 <div className="form-group form-username">
