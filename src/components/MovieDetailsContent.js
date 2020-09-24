@@ -11,7 +11,6 @@ import {
   
 } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-bootstrap";
-import EditForm from "./Pages/EditMovieFunctionality"
 
 
 export class MoviePage extends Component {
