@@ -33,7 +33,7 @@ useEffect(() => {
           <p data-aos="zoom-in" className="picture-left-paragraph">
             Hello! My name is Adelina and at the moment I'm a rookie in front
             end development. I'm a friendly, team-working person eager to learn
-            more and gain eperience in the industry. I'm looking forward in
+            more and gain experience in the industry. I'm looking forward in
             expanding my knowledge and building more interactive web
             applications. If you want to get in touch you can find me at the
             links below.
@@ -73,7 +73,7 @@ useEffect(() => {
           <p data-aos="zoom-in" className="picture-middle-paragraph">
             Hello! My name is Sergiu and at the moment I'm a rookie in front end
             development. I'm a friendly, team-working person eager to learn more
-            and gain eperience in the industry. I'm looking forward in expanding
+            and gain experience in the industry. I'm looking forward in expanding
             my knowledge and building more interactive web applications. If you
             want to get in touch you can find me at the links below.
           </p>
@@ -111,7 +111,7 @@ useEffect(() => {
           <p data-aos="zoom-in" className="picture-right-paragraph">
             Hello! My name is Alex and at the moment I'm a rookie in front end
             development. I'm a friendly, team-working person eager to learn more
-            and gain eperience in the industry. I'm looking forward in expanding
+            and gain experience in the industry. I'm looking forward in expanding
             my knowledge and building more interactive web applications. If you
             want to get in touch you can find me at the links below.
           </p>
