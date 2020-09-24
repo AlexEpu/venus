@@ -213,8 +213,8 @@ margin-right: 10px;
 
   }
   .image {
-    width: 320px;
-    height: 420px;
+    width: 280px;
+    height: 380px;
     border-radius: 15px !important;
     outline: none;
     transition: all 0.3s ease;
@@ -224,8 +224,8 @@ margin-right: 10px;
   .rec-item-wrapper,
   .rec-item-wrapper:hover .image {
     opacity: 1;
-    width: 330px;
-    height: 430px;
+    width: 300px;
+    height: 400px;
     -webkit-animation: flash 2s;
     animation: flash 2s;
   }
@@ -264,8 +264,8 @@ margin-right: 10px;
   }
 
   .image {
-    width: 250px;
-    height: 350px;
+    width: 240px;
+    height: 340px;
     border-radius: 15px !important;
     outline: none;
     transition: all 0.3s ease;
@@ -276,8 +276,8 @@ margin-right: 10px;
   .rec-item-wrapper,
   .rec-item-wrapper:hover .image {
     opacity: 1;
-    width: 290px;
-    height: 390px;
+    width: 250px;
+    height: 350px;
     -webkit-animation: flash 2s;
     animation: flash 2s;
   }
