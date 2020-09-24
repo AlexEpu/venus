@@ -162,12 +162,12 @@ class AddMovie extends Component {
   render() {
       return (
         <div className="form-container">
-          <div className="AddForm edit-add-form">
-            <div id="form">
+          <div className="AddForm edit-add-form add-form-add">
+            <div id="form form-add-page">
               <form onSubmit={this.submitMovie}>
                 <h3 className="addMovieTitle">Add Movie</h3>
                 {/* <label className="addMovieTitle">Movie Title</label> */}
-                <input type="text" className="input-class"
+                <input type="text" className="input-class input-class-add"
                   value={this.state.Title}
                   placeholder="Enter Movie Title"
                   name="Title"

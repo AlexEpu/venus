@@ -109,38 +109,46 @@ export class Login extends React.Component {
 
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Login</div>
+        {/* <div className="header">Login</div> */}
         <div className="content">
-          <div className="image-login">
-            <img alt="login "src={loginImg} />
+          <div className="image-login image-login-sign-in">
+            <i class="fas fa-door-open fa-5x"></i>
+            {/* <img alt="login "src={loginImg} /> */}
           </div>
-          <div className="errmessage">
-            {this.state.errMessage}
-            </div>
+          <div className="errmessage">{this.state.errMessage}</div>
           <div className="form" onSubmit={this.handleSubmit}>
-            <div  className="form-group form-username">
+            <div className="form-group form-username">
               {/* <label htmlFor="username">Username</label> */}
-              <input type="text" classbame="login-username"name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
-              <div className="valid">
-            {this.state.usernameError}
-            
-              </div>            
+              <input
+                type="text"
+                classbame="login-username"
+                name="username"
+                placeholder="username"
+                value={this.state.username}
+                onChange={this.handleChange}
+              />
+              <div className="valid">{this.state.usernameError}</div>
             </div>
             <div className="form-group form-pass">
               {/* <label htmlFor="password">Password</label> */}
-              <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange}/>
-              <div  className="valid">
-            {this.state.passwordError}
-           
-          </div>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+              <div className="valid">{this.state.passwordError}</div>
             </div>
           </div>
         </div>
         <div className="login-footer">
-        <div className="valid">
-            
-              </div> 
-          <button type="submit" className="btn-login" onClick={this.handleSubmit} >
+          <div className="valid"></div>
+          <button
+            type="submit"
+            className="btn-login"
+            onClick={this.handleSubmit}
+          >
             Login
           </button>
         </div>
