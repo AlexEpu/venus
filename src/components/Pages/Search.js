@@ -353,7 +353,7 @@ class Search extends Component {
                     <Link to={`/movie-details?id=${image._id}`} key={index}>
                       <div>
                         <div
-                          data-aos="fade-up"
+                          data-aos="zoom-in"
                           className="movie-poster-details"
                         >
                           <>

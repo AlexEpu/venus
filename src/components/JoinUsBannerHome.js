@@ -15,13 +15,17 @@ useEffect(() => {
     return (
       <div className="join-us-main">
         <div
+          data-aos-duration="1000"
           data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom"
           className="join-us-main-container"
         >
           <div className="text-container">
             <div className="text-container-wrap-text">
-              <h1 data-aos="fade-right" className="join-us-main-container-text">
+              <h1
+                data-aos-duration="1200"
+                data-aos="fade-right"
+                className="join-us-main-container-text"
+              >
                 JOIN-US
               </h1>
             </div>
