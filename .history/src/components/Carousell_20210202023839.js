@@ -21,7 +21,7 @@ export default class Carousell extends React.Component {
 
   componentDidMount() {
     // #1. First of all you have to fetch the images.
-    fetch("https://movies-app-siit.herokuapp.com/movies?take=99999&skip=0")
+    fetch("https://ancient-caverns-16784.herokuapp.com/movies?take=99999&skip=0")
       .then((response) => {
         if (!response.ok) {
           throw response;
